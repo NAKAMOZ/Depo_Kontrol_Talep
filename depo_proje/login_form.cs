@@ -63,33 +63,6 @@ namespace depo_proje
             Opacity += .2;
         }
 
-
-        private void login_Click(object sender, EventArgs e)
-        {
-            string g_adi = giristxt.Text;
-            string sifre = pwordtxt.Text;
-            SQLiteCommand cmd = new SQLiteCommand($"SELECT * from calisanlar where k_adi='{g_adi}' and sifre='{sifre}'", conn.conn());
-            SQLiteDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                main_form main = new main_form();
-                main.isim = reader[1].ToString();
-                SQLiteCommand ytk = new SQLiteCommand($"select * from yetkiler where id={reader[4].ToString()}", conn.conn());
-                SQLiteDataReader ytk2 = ytk.ExecuteReader();
-                if (ytk2.Read())
-                {
-                    main.yetki = ytk2[1].ToString();
-                }
-                main.Show();
-                this.Hide();
-            }
-            else
-            {
-                hata.Visible = true;
-            }
-            conn.conn().Close();
-        }
-
         private void panel3_MouseDown(object sender, MouseEventArgs e)
         {
             drag = true;
@@ -108,6 +81,34 @@ namespace depo_proje
         private void panel3_MouseUp(object sender, MouseEventArgs e)
         {
             drag = false;
+        }
+
+        private void mainButtons1_Click(object sender, EventArgs e)
+        {
+            string g_adi = giristxt.Text;
+            string sifre = pwordtxt.Text;
+            SQLiteCommand cmd = new SQLiteCommand($"SELECT * from calisanlar where k_adi='{g_adi}' and sifre='{sifre}'", conn.conn());
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                warehouse_form ware = new warehouse_form();
+                main_form main = new main_form();
+                main.isim = reader[1].ToString();
+                ware.name = reader[1].ToString();
+                SQLiteCommand cmd1 = new SQLiteCommand($"select * from yetkiler where id={reader[4]}", conn.conn());
+                SQLiteDataReader reader1 = cmd1.ExecuteReader();
+                if (reader1.Read())
+                {
+                    main.yetki = reader1[1].ToString();
+                }
+                main.Show();
+                this.Hide();
+            }
+            else
+            {
+                hata.Visible = true;
+            }
+            conn.conn().Close();
         }
     }
 }

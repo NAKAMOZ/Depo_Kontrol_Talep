@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.minimaze = new FontAwesome.Sharp.IconButton();
-            this.close = new FontAwesome.Sharp.Material.MaterialButton();
             this.maximaze = new FontAwesome.Sharp.IconButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -48,6 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.close = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -59,8 +59,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.panel1.Controls.Add(this.minimaze);
-            this.panel1.Controls.Add(this.close);
             this.panel1.Controls.Add(this.maximaze);
+            this.panel1.Controls.Add(this.close);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -70,7 +70,7 @@
             // 
             // minimaze
             // 
-            this.minimaze.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimaze.Dock = System.Windows.Forms.DockStyle.Right;
             this.minimaze.FlatAppearance.BorderSize = 0;
             this.minimaze.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.minimaze.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
@@ -91,29 +91,9 @@
             this.minimaze.MouseEnter += new System.EventHandler(this.minimaze_MouseEnter);
             this.minimaze.MouseLeave += new System.EventHandler(this.minimaze_MouseLeave);
             // 
-            // close
-            // 
-            this.close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.close.FlatAppearance.BorderSize = 0;
-            this.close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.close.IconChar = FontAwesome.Sharp.MaterialIcons.Close;
-            this.close.IconColor = System.Drawing.Color.Gray;
-            this.close.IconSize = 30;
-            this.close.Location = new System.Drawing.Point(1070, 0);
-            this.close.Name = "close";
-            this.close.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.close.Size = new System.Drawing.Size(50, 30);
-            this.close.TabIndex = 108;
-            this.close.UseVisualStyleBackColor = true;
-            this.close.Click += new System.EventHandler(this.close_Click);
-            this.close.MouseEnter += new System.EventHandler(this.close_MouseEnter);
-            this.close.MouseLeave += new System.EventHandler(this.close_MouseLeave);
-            // 
             // maximaze
             // 
-            this.maximaze.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.maximaze.Dock = System.Windows.Forms.DockStyle.Right;
             this.maximaze.FlatAppearance.BorderSize = 0;
             this.maximaze.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.maximaze.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
@@ -353,6 +333,29 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // close
+            // 
+            this.close.Dock = System.Windows.Forms.DockStyle.Right;
+            this.close.FlatAppearance.BorderSize = 0;
+            this.close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.close.Font = new System.Drawing.Font("Open Sans Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.close.ForeColor = System.Drawing.Color.Gray;
+            this.close.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.close.IconColor = System.Drawing.Color.Gray;
+            this.close.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.close.IconSize = 18;
+            this.close.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.close.Location = new System.Drawing.Point(1070, 0);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(50, 30);
+            this.close.TabIndex = 108;
+            this.close.UseVisualStyleBackColor = true;
+            this.close.Click += new System.EventHandler(this.close_Click);
+            this.close.MouseEnter += new System.EventHandler(this.close_MouseEnter);
+            this.close.MouseLeave += new System.EventHandler(this.close_MouseLeave);
+            // 
             // main_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -390,7 +393,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private FontAwesome.Sharp.IconButton minimaze;
-        private FontAwesome.Sharp.Material.MaterialButton close;
         private FontAwesome.Sharp.IconButton maximaze;
         private FontAwesome.Sharp.IconButton depobtn;
         private FontAwesome.Sharp.IconButton talepbtn;
@@ -400,5 +402,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton clear;
+        private FontAwesome.Sharp.IconButton close;
     }
 }

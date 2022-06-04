@@ -37,12 +37,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pwordtxt = new System.Windows.Forms.TextBox();
-            this.login = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.hata = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.mainButtons1 = new depo_proje.mainButtons();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -130,22 +130,6 @@
             this.pwordtxt.Size = new System.Drawing.Size(240, 22);
             this.pwordtxt.TabIndex = 2;
             // 
-            // login
-            // 
-            this.login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.login.FlatAppearance.BorderSize = 0;
-            this.login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.login.Font = new System.Drawing.Font("Open Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.login.ForeColor = System.Drawing.Color.White;
-            this.login.Location = new System.Drawing.Point(51, 459);
-            this.login.Margin = new System.Windows.Forms.Padding(10);
-            this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(318, 51);
-            this.login.TabIndex = 101;
-            this.login.Text = "Giriş Yap";
-            this.login.UseVisualStyleBackColor = false;
-            this.login.Click += new System.EventHandler(this.login_Click);
-            // 
             // timer1
             // 
             this.timer1.Interval = 30;
@@ -191,15 +175,41 @@
             this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
             this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
+            // mainButtons1
+            // 
+            this.mainButtons1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.mainButtons1.FlatAppearance.BorderSize = 3;
+            this.mainButtons1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.mainButtons1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.mainButtons1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mainButtons1.Font = new System.Drawing.Font("Rubik", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.mainButtons1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.mainButtons1.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
+            this.mainButtons1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.mainButtons1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.mainButtons1.IconSize = 45;
+            this.mainButtons1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.mainButtons1.Location = new System.Drawing.Point(51, 459);
+            this.mainButtons1.Margin = new System.Windows.Forms.Padding(20);
+            this.mainButtons1.Name = "mainButtons1";
+            this.mainButtons1.Size = new System.Drawing.Size(318, 51);
+            this.mainButtons1.TabIndex = 105;
+            this.mainButtons1.Text = "Giriş Yap";
+            this.mainButtons1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mainButtons1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.mainButtons1.UseVisualStyleBackColor = true;
+            this.mainButtons1.Click += new System.EventHandler(this.mainButtons1_Click);
+            // 
             // login_form
             // 
+            this.AcceptButton = this.mainButtons1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(420, 600);
+            this.Controls.Add(this.mainButtons1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.hata);
-            this.Controls.Add(this.login);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pwordtxt);
@@ -234,11 +244,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox pwordtxt;
-        private System.Windows.Forms.Button login;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label hata;
         private System.Windows.Forms.Panel panel3;
+        private mainButtons mainButtons1;
     }
 }
 

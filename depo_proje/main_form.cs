@@ -97,6 +97,13 @@ namespace depo_proje
             }
         }
 
+        private void close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            login_form login = new login_form();
+            login.Show();
+        }
+
         private void close_MouseEnter(object sender, EventArgs e)
         {
             close.IconColor = Color.White;
@@ -105,13 +112,6 @@ namespace depo_proje
         private void close_MouseLeave(object sender, EventArgs e)
         {
             close.IconColor = Color.Gray;
-        }
-
-        private void close_Click(object sender, EventArgs e)
-        {
-            login_form log = new login_form();
-            log.Show();
-            this.Close();
         }
 
         private void maximaze_Click_1(object sender, EventArgs e)
