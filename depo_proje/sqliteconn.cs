@@ -11,7 +11,7 @@ namespace depo_proje
     {
         public SQLiteConnection conn()
         {
-            SQLiteConnection conn = new SQLiteConnection("Data Source = depo.db");
+            SQLiteConnection conn = new SQLiteConnection(@"Data Source = depo.db");
             conn.Open();
             return conn;
         }

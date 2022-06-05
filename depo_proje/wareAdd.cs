@@ -15,7 +15,7 @@ namespace depo_proje
     {
         bool drag = false;
         Point start_point = new Point(0, 0);
-        private SQLiteConnection conn = new SQLiteConnection("Data Source = depo.db");
+        private SQLiteConnection baglanti = new SQLiteConnection(@"Data Source = depo.db");
         private List<string> urunList = new List<string>();
         public wareAdd()
         {
@@ -24,16 +24,16 @@ namespace depo_proje
 
         private void wareAdd_Load(object sender, EventArgs e)
         {
-            conn.Open();
+            baglanti.Open();
             timer1.Start();
-            SQLiteCommand cmd = new SQLiteCommand("SELECT urun FROM depo", conn);
+            SQLiteCommand cmd = new SQLiteCommand("SELECT urun FROM depo;", baglanti);
             SQLiteDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 urunName.Items.Add(reader[0].ToString());
                 urunList.Add(reader[0].ToString());
             }
-            conn.Close();
+            baglanti.Close();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -84,98 +84,37 @@ namespace depo_proje
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            baglanti.Open();
             if (urunName.Text != "" && miktarNum.Text != "0" && birimCmb.Text != "")
             {
-                bool a = false;
-                for (int i = 0; i < urunList.Count; i++)
+                try
                 {
-                    if (urunList[i] == urunName.Text)
+                    SQLiteCommand insCommand = new SQLiteCommand($"INSERT INTO depo (urun,miktar,birim) VALUES('{urunName.Text}','{miktarNum.Text}','{birimCmb.Text}');", baglanti);
+                    insCommand.ExecuteNonQuery();
+                    uyari.Visible = true;
+                    uyari.Text = "Kayıt İşlemi Başarılı!";
+                    uyari.Location = new Point(108, 475);
+                    uyari.ForeColor = Color.FromArgb(0, 173, 181);
+                    urunName.Items.Clear();
+                    SQLiteCommand cmbCommand = new SQLiteCommand("SELECT urun FROM depo;", baglanti);
+                    SQLiteDataReader cmbReader = cmbCommand.ExecuteReader();
+                    while (cmbReader.Read())
                     {
-                        a = true;
+                        urunName.Items.Add(cmbReader[0].ToString());
                     }
+                    urunName.Text = "";
+                    miktarNum.Text = "0";
+                    birimCmb.Text = "";
                 }
-                conn.Open();
-                SQLiteCommand cmd = new SQLiteCommand($"SELECT urun, miktar FROM depo", conn);
-                SQLiteDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
+                catch
                 {
-                    if (a == true)
-                    {
-                        try
-                        {
-                            SQLiteCommand cmd2 = new SQLiteCommand($"select miktar from depo where urun = '{urunName.Text}'", conn);
-                            SQLiteDataReader reader2 = cmd2.ExecuteReader();
-                            if (reader2.Read())
-                            {
-                                SQLiteCommand uptCommand = new SQLiteCommand($"UPDATE depo SET miktar='{Convert.ToInt32(reader2[0]) + Convert.ToInt32(miktarNum.Text)}' where urun = '{urunName.Text}'", conn);
-                                uptCommand.ExecuteNonQuery();
-                            }
-                            uyari.Visible = true;
-                            uyari.Text = "Kayıt İşlemi Başarılı!";
-                            uyari.Location = new Point(108, 475);
-                            uyari.ForeColor = Color.FromArgb(0, 173, 181);
-                            urunName.Text = "";
-                            miktarNum.Text = "";
-                            birimCmb.Text = "";
-                            conn.Close();
-                            addButton.Enabled = false;
-                        }
-                        catch
-                        {
-                            uyari.Text = "Kayıt İşlemi Başarısız!";
-                            uyari.Location = new Point(102, 475);
-                            uyari.ForeColor = Color.FromArgb(215, 35, 35);
-                            uyari.Visible = true;
-                        }
-                    }
-                    else
-                    {
-                        try
-                        {
-                            SQLiteCommand insCommand = new SQLiteCommand($"INSERT INTO depo (urun,miktar,birim) VALUES('{urunName.Text}','{miktarNum.Text}','{birimCmb.Text}')", conn);
-                            insCommand.ExecuteNonQuery();
-                            uyari.Visible = true;
-                            uyari.Text = "Kayıt İşlemi Başarılı!";
-                            uyari.Location = new Point(108, 475);
-                            uyari.ForeColor = Color.FromArgb(0, 173, 181);
-                            urunName.Items.Clear();
-                            SQLiteCommand cmbCommand = new SQLiteCommand("SELECT urun FROM depo", conn);
-                            SQLiteDataReader cmbReader = cmbCommand.ExecuteReader();
-                            while (cmbReader.Read())
-                            {
-                                urunName.Items.Add(cmbReader[0].ToString());
-                            }
-                            urunName.Text = "";
-                            miktarNum.Text = "0";
-                            birimCmb.Text = "";
-                            conn.Close();
-                            addButton.Enabled = false;
-                        }
-                        catch
-                        {
-                            uyari.Text = "Kayıt İşlemi Başarısız!";
-                            uyari.Location = new Point(102, 475);
-                            uyari.ForeColor = Color.FromArgb(215, 35, 35);
-                            uyari.Visible = true;
-                        }
-
-                    }
+                    uyari.Text = "Kayıt İşlemi Başarısız!";
+                    uyari.Location = new Point(102, 475);
+                    uyari.ForeColor = Color.FromArgb(215, 35, 35);
+                    uyari.Visible = true;
                 }
-                conn.Close();
-                timer3.Start();
             }
-            else
-            {
-                uyari.Text = "Kayıt İşlemi Başarısız!";
-                uyari.Location = new Point(102, 475);
-                uyari.ForeColor = Color.FromArgb(215, 35, 35);
-                uyari.Visible = true;
-            }
-        }
-
-        private void timer3_Tick(object sender, EventArgs e)
-        {
-            timer2.Start();
+            baglanti.Close();
         }
     }
 }

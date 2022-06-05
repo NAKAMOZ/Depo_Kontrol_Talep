@@ -44,10 +44,10 @@
             this.miktarNum = new System.Windows.Forms.NumericUpDown();
             this.urunName = new System.Windows.Forms.ComboBox();
             this.uyari = new System.Windows.Forms.Label();
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.addButton = new depo_proje.mainButtons();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.close = new depo_proje.mainButtons();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.miktarNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -210,11 +210,6 @@
             this.uyari.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.uyari.Visible = false;
             // 
-            // timer3
-            // 
-            this.timer3.Interval = 1000;
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
             // addButton
             // 
             this.addButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
@@ -276,12 +271,22 @@
             this.close.UseVisualStyleBackColor = true;
             this.close.Click += new System.EventHandler(this.close_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(209, 272);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 22);
+            this.label5.TabIndex = 119;
+            this.label5.Text = "label5";
+            // 
             // wareAdd
             // 
             this.AcceptButton = this.addButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(420, 600);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.uyari);
             this.Controls.Add(this.urunName);
             this.Controls.Add(this.miktarNum);
@@ -332,6 +337,6 @@
         private System.Windows.Forms.NumericUpDown miktarNum;
         private System.Windows.Forms.ComboBox urunName;
         private System.Windows.Forms.Label uyari;
-        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Label label5;
     }
 }

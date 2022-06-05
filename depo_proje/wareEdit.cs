@@ -82,6 +82,7 @@ namespace depo_proje
                     uyari.Location = new Point(80, 475);
                     uyari.ForeColor = Color.FromArgb(0, 173, 181);
                     uyari.Visible = true;
+                    editButton.Enabled = false;
                     timer3.Start();
                 }
                 catch
