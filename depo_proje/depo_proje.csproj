@@ -138,6 +138,12 @@
     <Compile Include="wareAdd.Designer.cs">
       <DependentUpon>wareAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="wareEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wareEdit.Designer.cs">
+      <DependentUpon>wareEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="warehouse_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="wareAdd.resx">
       <DependentUpon>wareAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wareEdit.resx">
+      <DependentUpon>wareEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="warehouse_form.resx">
       <DependentUpon>warehouse_form.cs</DependentUpon>

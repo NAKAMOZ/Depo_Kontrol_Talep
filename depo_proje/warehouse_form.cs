@@ -56,5 +56,27 @@ namespace depo_proje
                 uyari.Visible = true;
             }
         }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            wareAdd wAdd = new wareAdd();
+            wAdd.Show();
+        }
+
+        private void mainButtons2_Click(object sender, EventArgs e)
+        {
+            dataGosterge();
+        }
+
+        private void mainButtons1_Click(object sender, EventArgs e)
+        {
+            wareEdit wEdit = new wareEdit();
+            int rowIndex = dMalzemeler.CurrentCell.RowIndex;
+            wEdit.urunId = dMalzemeler.Rows[rowIndex].Cells[0].Value.ToString();
+            wEdit.urunIsim = dMalzemeler.Rows[rowIndex].Cells[1].Value.ToString();
+            wEdit.urunMiktar = dMalzemeler.Rows[rowIndex].Cells[2].Value.ToString();
+            wEdit.urunBirim = dMalzemeler.Rows[rowIndex].Cells[3].Value.ToString();
+            wEdit.Show();
+        }
     }
 }

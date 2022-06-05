@@ -31,6 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonPanel = new System.Windows.Forms.Panel();
+            this.mainButtons2 = new depo_proje.mainButtons();
+            this.editBtn = new depo_proje.mainButtons();
             this.uyari = new System.Windows.Forms.Label();
             this.delBtn = new depo_proje.mainButtons();
             this.addBtn = new depo_proje.mainButtons();
@@ -47,6 +49,8 @@
             // 
             // buttonPanel
             // 
+            this.buttonPanel.Controls.Add(this.mainButtons2);
+            this.buttonPanel.Controls.Add(this.editBtn);
             this.buttonPanel.Controls.Add(this.uyari);
             this.buttonPanel.Controls.Add(this.delBtn);
             this.buttonPanel.Controls.Add(this.addBtn);
@@ -56,12 +60,56 @@
             this.buttonPanel.Size = new System.Drawing.Size(920, 90);
             this.buttonPanel.TabIndex = 1;
             // 
+            // mainButtons2
+            // 
+            this.mainButtons2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.mainButtons2.FlatAppearance.BorderSize = 3;
+            this.mainButtons2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.mainButtons2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.mainButtons2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mainButtons2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.mainButtons2.IconChar = FontAwesome.Sharp.IconChar.RedoAlt;
+            this.mainButtons2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.mainButtons2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.mainButtons2.IconSize = 44;
+            this.mainButtons2.Location = new System.Drawing.Point(523, 20);
+            this.mainButtons2.Margin = new System.Windows.Forms.Padding(20);
+            this.mainButtons2.Name = "mainButtons2";
+            this.mainButtons2.Size = new System.Drawing.Size(120, 50);
+            this.mainButtons2.TabIndex = 106;
+            this.mainButtons2.Text = "Yenile";
+            this.mainButtons2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.mainButtons2.UseVisualStyleBackColor = true;
+            this.mainButtons2.Click += new System.EventHandler(this.mainButtons2_Click);
+            // 
+            // editBtn
+            // 
+            this.editBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.editBtn.FlatAppearance.BorderSize = 3;
+            this.editBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.editBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.editBtn.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.editBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.editBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.editBtn.IconSize = 44;
+            this.editBtn.Location = new System.Drawing.Point(189, 20);
+            this.editBtn.Margin = new System.Windows.Forms.Padding(20);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(134, 50);
+            this.editBtn.TabIndex = 105;
+            this.editBtn.Text = "Düzenle";
+            this.editBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.Click += new System.EventHandler(this.mainButtons1_Click);
+            // 
             // uyari
             // 
             this.uyari.AutoSize = true;
             this.uyari.Font = new System.Drawing.Font("Open Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.uyari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.uyari.Location = new System.Drawing.Point(340, 32);
+            this.uyari.Location = new System.Drawing.Point(645, 31);
             this.uyari.Margin = new System.Windows.Forms.Padding(20);
             this.uyari.Name = "uyari";
             this.uyari.Size = new System.Drawing.Size(255, 27);
@@ -81,7 +129,7 @@
             this.delBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.delBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.delBtn.IconSize = 44;
-            this.delBtn.Location = new System.Drawing.Point(180, 20);
+            this.delBtn.Location = new System.Drawing.Point(363, 20);
             this.delBtn.Margin = new System.Windows.Forms.Padding(20);
             this.delBtn.Name = "delBtn";
             this.delBtn.Size = new System.Drawing.Size(120, 50);
@@ -103,7 +151,7 @@
             this.addBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.addBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.addBtn.IconSize = 44;
-            this.addBtn.Location = new System.Drawing.Point(20, 20);
+            this.addBtn.Location = new System.Drawing.Point(29, 20);
             this.addBtn.Margin = new System.Windows.Forms.Padding(20);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(120, 50);
@@ -111,6 +159,7 @@
             this.addBtn.Text = "Ekle";
             this.addBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // mainPanel
             // 
@@ -228,5 +277,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn urunMiktar;
         private System.Windows.Forms.DataGridViewTextBoxColumn urunBirim;
         private System.Windows.Forms.Label uyari;
+        private mainButtons mainButtons2;
+        private mainButtons editBtn;
     }
 }

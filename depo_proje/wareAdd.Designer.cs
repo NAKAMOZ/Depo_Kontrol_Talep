@@ -41,16 +41,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.birimCmb = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.miktarNum = new System.Windows.Forms.NumericUpDown();
             this.urunName = new System.Windows.Forms.ComboBox();
             this.uyari = new System.Windows.Forms.Label();
-            this.addButton = new depo_proje.mainButtons();
-            this.close = new depo_proje.mainButtons();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.addButton = new depo_proje.mainButtons();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.close = new depo_proje.mainButtons();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.miktarNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -73,7 +73,7 @@
             this.label4.Enabled = false;
             this.label4.Font = new System.Drawing.Font("Open Sans Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.label4.Location = new System.Drawing.Point(3, 5);
+            this.label4.Location = new System.Drawing.Point(12, 5);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(151, 20);
             this.label4.TabIndex = 0;
@@ -167,18 +167,6 @@
             this.birimCmb.Size = new System.Drawing.Size(229, 30);
             this.birimCmb.TabIndex = 2;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(135, 75);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 180);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 115;
-            this.pictureBox1.TabStop = false;
-            // 
             // miktarNum
             // 
             this.miktarNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
@@ -213,14 +201,19 @@
             this.uyari.AutoSize = true;
             this.uyari.Font = new System.Drawing.Font("Open Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.uyari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.uyari.Location = new System.Drawing.Point(102, 475);
+            this.uyari.Location = new System.Drawing.Point(108, 475);
             this.uyari.Margin = new System.Windows.Forms.Padding(20);
             this.uyari.Name = "uyari";
-            this.uyari.Size = new System.Drawing.Size(216, 27);
+            this.uyari.Size = new System.Drawing.Size(204, 27);
             this.uyari.TabIndex = 118;
-            this.uyari.Text = "Kayıt İşlemi Başarısız!";
+            this.uyari.Text = "Kayıt İşlemi Başarılı!";
             this.uyari.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.uyari.Visible = false;
+            // 
+            // timer3
+            // 
+            this.timer3.Interval = 1000;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // addButton
             // 
@@ -246,6 +239,18 @@
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(135, 75);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 180);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 115;
+            this.pictureBox1.TabStop = false;
+            // 
             // close
             // 
             this.close.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
@@ -270,11 +275,6 @@
             this.close.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.close.UseVisualStyleBackColor = true;
             this.close.Click += new System.EventHandler(this.close_Click);
-            // 
-            // timer3
-            // 
-            this.timer3.Interval = 1000;
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // wareAdd
             // 
@@ -306,8 +306,8 @@
             this.Load += new System.EventHandler(this.wareAdd_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.miktarNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
