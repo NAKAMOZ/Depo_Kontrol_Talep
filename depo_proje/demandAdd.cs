@@ -11,41 +11,15 @@ using System.Data.SQLite;
 
 namespace depo_proje
 {
-    public partial class wareAdd : Form
+    public partial class demandAdd : Form
     {
-        bool drag = false;
-        Point start_point = new Point(0, 0);
-        private SQLiteConnection conn = new SQLiteConnection(@"Data Source = depo.db");
-        public wareAdd()
+        public demandAdd()
         {
             InitializeComponent();
         }
-
-        private void wareAdd_Load(object sender, EventArgs e)
-        {
-            timer1.Start();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (Opacity == 1)
-            {
-                timer1.Stop();
-            }
-
-            Opacity += .2;
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            if (Opacity <= 0)
-            {
-                timer2.Stop();
-                this.Close();
-            }
-
-            Opacity -= .2;
-        }
+        bool drag = false;
+        Point start_point = new Point(0, 0);
+        private SQLiteConnection conn = new SQLiteConnection(@"Data Source = depo.db");
 
         private void panel3_MouseDown(object sender, MouseEventArgs e)
         {
@@ -72,18 +46,45 @@ namespace depo_proje
             timer2.Start();
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Opacity == 1)
+            {
+                timer1.Stop();
+            }
+
+            Opacity += .2;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (Opacity <= 0)
+            {
+                timer2.Stop();
+                this.Close();
+            }
+
+            Opacity -= .2;
+        }
+
+        private void demandAdd_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
         private void addButton_Click(object sender, EventArgs e)
         {
-            conn.Open();
             if (urunName.Text != "" && miktarNum.Text != "0" && birimCmb.Text != "")
             {
                 try
                 {
-                    SQLiteCommand insCommand = new SQLiteCommand($"INSERT INTO depo (urun,miktar,birim) VALUES('{urunName.Text}','{miktarNum.Text}','{birimCmb.Text}');", conn);
-                    insCommand.ExecuteNonQuery();
+                    conn.Open();
+                    SQLiteCommand addCommand = new SQLiteCommand($"INSERT INTO talepler (t_urun, t_urun_miktar, t_urun_birim, t_tarih, t_onay, gorunurluk) values('{urunName.Text}',{miktarNum.Text},'{birimCmb.Text}',datetime('now','localtime'),0,1);", conn);
+                    addCommand.ExecuteNonQuery();
+                    conn.Close();
                     uyari.Visible = true;
-                    uyari.Text = "Kayıt İşlemi Başarılı!";
-                    uyari.Location = new Point(108, 475);
+                    uyari.Text = "Talep İşlemi Başarılı!";
+                    uyari.Location = new Point(107, 475);
                     uyari.ForeColor = Color.FromArgb(0, 173, 181);
                     urunName.Text = "";
                     miktarNum.Text = "0";
@@ -91,20 +92,19 @@ namespace depo_proje
                 }
                 catch
                 {
-                    uyari.Text = "Kayıt İşlemi Başarısız!";
-                    uyari.Location = new Point(102, 475);
+                    uyari.Text = "Talep İşlemi Başarısız!";
+                    uyari.Location = new Point(101, 475);
                     uyari.ForeColor = Color.FromArgb(215, 35, 35);
                     uyari.Visible = true;
                 }
             }
             else
             {
-                uyari.Text = "Kayıt İşlemi Başarısız!";
-                uyari.Location = new Point(102, 475);
+                uyari.Text = "Talep İşlemi Başarısız!";
+                uyari.Location = new Point(101, 475);
                 uyari.ForeColor = Color.FromArgb(215, 35, 35);
                 uyari.Visible = true;
             }
-            conn.Close();
         }
     }
 }

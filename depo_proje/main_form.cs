@@ -52,10 +52,10 @@ namespace depo_proje
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.ForeColor = Color.FromArgb(0, 173, 181);
+                currentBtn.ForeColor = Color.FromArgb(20,255,236);
                 currentBtn.Padding = new Padding(25, 0, 0, 0);
-                currentBtn.IconColor = Color.FromArgb(0, 173, 181);
-                leftBorderBtn.BackColor = Color.FromArgb(0, 173, 181);
+                currentBtn.IconColor = Color.FromArgb(20, 255, 236);
+                leftBorderBtn.BackColor = Color.FromArgb(20, 255, 236);
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
@@ -162,9 +162,15 @@ namespace depo_proje
         private void talepbtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+            OpenChildForm(new demand_form());
         }
 
         private void islembtn_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+        }
+
+        private void onayBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
         }

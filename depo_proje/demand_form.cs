@@ -7,25 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FontAwesome.Sharp;
 using System.Data.SQLite;
 
 namespace depo_proje
 {
-    public partial class warehouse_form : Form
+    public partial class demand_form : Form
     {
-        public warehouse_form()
+        public demand_form()
         {
             InitializeComponent();
         }
 
-        private SQLiteConnection conn = new SQLiteConnection("Data Source = depo.db");
-        public string name;
+        private SQLiteConnection conn = new SQLiteConnection(@"Data Source = depo.db");
 
         private void dataGosterge()
         {
             conn.Open();
-            SQLiteDataAdapter adapt = new SQLiteDataAdapter($"SELECT * FROM depo", conn);
+            SQLiteDataAdapter adapt = new SQLiteDataAdapter("SELECT id,t_urun,t_urun_miktar,t_urun_birim,strftime('%H:%M %d/%m/%Y',t_tarih) t_tarih,iif(t_onay==1,'Onaylandı',iif(t_onay==0,'Onaylanmadı','Reddedildi')) t_onay FROM talepler where gorunurluk = 1", conn);
             DataSet dset = new DataSet();
             adapt.Fill(dset, "info");
             dMalzemeler.DataSource = dset.Tables[0];
@@ -33,7 +31,7 @@ namespace depo_proje
             dMalzemeler.Select();
         }
 
-        private void warehouse_form_Load(object sender, EventArgs e)
+        private void demand_form_Load(object sender, EventArgs e)
         {
             dataGosterge();
         }
@@ -45,7 +43,7 @@ namespace depo_proje
                 conn.Open();
                 int rowIndex = dMalzemeler.CurrentCell.RowIndex;
                 string rowID = dMalzemeler.Rows[rowIndex].Cells[0].Value.ToString();
-                SQLiteCommand cmd = new SQLiteCommand($"DELETE FROM depo WHERE id={rowID}", conn);
+                SQLiteCommand cmd = new SQLiteCommand($"UPDATE talepler SET gorunurluk=0 WHERE id={rowID}", conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 dataGosterge();
@@ -56,26 +54,9 @@ namespace depo_proje
             }
         }
 
-        private void addBtn_Click(object sender, EventArgs e)
-        {
-            wareAdd wAdd = new wareAdd();
-            wAdd.Show();
-        }
-
         private void mainButtons2_Click(object sender, EventArgs e)
         {
             dataGosterge();
-        }
-
-        private void mainButtons1_Click(object sender, EventArgs e)
-        {
-            wareEdit wEdit = new wareEdit();
-            int rowIndex = dMalzemeler.CurrentCell.RowIndex;
-            wEdit.urunId = dMalzemeler.Rows[rowIndex].Cells[0].Value.ToString();
-            wEdit.urunIsim = dMalzemeler.Rows[rowIndex].Cells[1].Value.ToString();
-            wEdit.urunMiktar = dMalzemeler.Rows[rowIndex].Cells[2].Value.ToString();
-            wEdit.urunBirim = dMalzemeler.Rows[rowIndex].Cells[3].Value.ToString();
-            wEdit.Show();
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -83,13 +64,25 @@ namespace depo_proje
             if (searchTxt.Text != "")
             {
                 conn.Open();
-                SQLiteDataAdapter adapt = new SQLiteDataAdapter($"SELECT * FROM depo WHERE urun LIKE '%{searchTxt.Text}%' OR id='{searchTxt.Text}';", conn);
+                SQLiteDataAdapter adapt = new SQLiteDataAdapter($"SELECT id,t_urun,t_urun_miktar,t_urun_birim,strftime('%H:%M %d/%m/%Y',t_tarih) t_tarih,iif(t_onay==1,'Onaylandı',iif(t_onay==0,'Onaylanmadı','Reddedildi')) t_onay FROM talepler WHERE (t_urun LIKE '%{searchTxt.Text}%' OR id='{searchTxt.Text}') AND gorunurluk=1;", conn);
                 DataSet dset = new DataSet();
                 adapt.Fill(dset, "info");
                 dMalzemeler.DataSource = dset.Tables[0];
                 conn.Close();
                 dMalzemeler.Select();
             }
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            demandAdd dAdd = new demandAdd();
+            dAdd.Show();
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            demandEdit dEdit = new demandEdit();
+            dEdit.Show();
         }
     }
 }

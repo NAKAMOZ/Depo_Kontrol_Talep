@@ -30,14 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.minimaze = new FontAwesome.Sharp.IconButton();
-            this.maximaze = new FontAwesome.Sharp.IconButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.clear = new FontAwesome.Sharp.IconButton();
-            this.islembtn = new FontAwesome.Sharp.IconButton();
-            this.talepbtn = new FontAwesome.Sharp.IconButton();
-            this.depobtn = new FontAwesome.Sharp.IconButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.isimbtn = new System.Windows.Forms.Button();
             this.yetkibtn = new System.Windows.Forms.Button();
@@ -47,6 +41,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.onayBtn = new FontAwesome.Sharp.IconButton();
+            this.clear = new FontAwesome.Sharp.IconButton();
+            this.islembtn = new FontAwesome.Sharp.IconButton();
+            this.talepbtn = new FontAwesome.Sharp.IconButton();
+            this.depobtn = new FontAwesome.Sharp.IconButton();
+            this.minimaze = new FontAwesome.Sharp.IconButton();
+            this.maximaze = new FontAwesome.Sharp.IconButton();
             this.close = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -68,52 +69,6 @@
             this.panel1.TabIndex = 102;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
-            // minimaze
-            // 
-            this.minimaze.Dock = System.Windows.Forms.DockStyle.Right;
-            this.minimaze.FlatAppearance.BorderSize = 0;
-            this.minimaze.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.minimaze.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.minimaze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimaze.Font = new System.Drawing.Font("Open Sans Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.minimaze.ForeColor = System.Drawing.Color.Gray;
-            this.minimaze.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.minimaze.IconColor = System.Drawing.Color.Gray;
-            this.minimaze.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.minimaze.IconSize = 18;
-            this.minimaze.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.minimaze.Location = new System.Drawing.Point(970, 0);
-            this.minimaze.Name = "minimaze";
-            this.minimaze.Size = new System.Drawing.Size(50, 30);
-            this.minimaze.TabIndex = 107;
-            this.minimaze.UseVisualStyleBackColor = true;
-            this.minimaze.Click += new System.EventHandler(this.minimaze_Click_1);
-            this.minimaze.MouseEnter += new System.EventHandler(this.minimaze_MouseEnter);
-            this.minimaze.MouseLeave += new System.EventHandler(this.minimaze_MouseLeave);
-            // 
-            // maximaze
-            // 
-            this.maximaze.Dock = System.Windows.Forms.DockStyle.Right;
-            this.maximaze.FlatAppearance.BorderSize = 0;
-            this.maximaze.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.maximaze.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.maximaze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maximaze.Font = new System.Drawing.Font("Open Sans Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.maximaze.ForeColor = System.Drawing.Color.Gray;
-            this.maximaze.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.maximaze.IconColor = System.Drawing.Color.Gray;
-            this.maximaze.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.maximaze.IconSize = 18;
-            this.maximaze.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.maximaze.Location = new System.Drawing.Point(1020, 0);
-            this.maximaze.Name = "maximaze";
-            this.maximaze.Size = new System.Drawing.Size(50, 30);
-            this.maximaze.TabIndex = 104;
-            this.maximaze.UseVisualStyleBackColor = true;
-            this.maximaze.Click += new System.EventHandler(this.maximaze_Click_1);
-            this.maximaze.MouseEnter += new System.EventHandler(this.maximaze_MouseEnter);
-            this.maximaze.MouseLeave += new System.EventHandler(this.maximaze_MouseLeave);
-            // 
             // timer1
             // 
             this.timer1.Interval = 15;
@@ -121,6 +76,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.panelMenu.Controls.Add(this.onayBtn);
             this.panelMenu.Controls.Add(this.clear);
             this.panelMenu.Controls.Add(this.islembtn);
             this.panelMenu.Controls.Add(this.talepbtn);
@@ -133,102 +89,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 600);
             this.panelMenu.TabIndex = 103;
-            // 
-            // clear
-            // 
-            this.clear.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.clear.FlatAppearance.BorderSize = 0;
-            this.clear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.clear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clear.Font = new System.Drawing.Font("Open Sans ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.clear.ForeColor = System.Drawing.Color.White;
-            this.clear.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.clear.IconColor = System.Drawing.Color.White;
-            this.clear.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.clear.IconSize = 36;
-            this.clear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.clear.Location = new System.Drawing.Point(0, 560);
-            this.clear.Name = "clear";
-            this.clear.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.clear.Size = new System.Drawing.Size(200, 40);
-            this.clear.TabIndex = 110;
-            this.clear.Text = "Sıfırla";
-            this.clear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.clear.UseVisualStyleBackColor = true;
-            this.clear.Click += new System.EventHandler(this.clear_Click);
-            // 
-            // islembtn
-            // 
-            this.islembtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.islembtn.FlatAppearance.BorderSize = 0;
-            this.islembtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.islembtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.islembtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.islembtn.Font = new System.Drawing.Font("Open Sans ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.islembtn.ForeColor = System.Drawing.Color.White;
-            this.islembtn.IconChar = FontAwesome.Sharp.IconChar.History;
-            this.islembtn.IconColor = System.Drawing.Color.White;
-            this.islembtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.islembtn.IconSize = 36;
-            this.islembtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.islembtn.Location = new System.Drawing.Point(0, 162);
-            this.islembtn.Name = "islembtn";
-            this.islembtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.islembtn.Size = new System.Drawing.Size(200, 40);
-            this.islembtn.TabIndex = 109;
-            this.islembtn.Text = "İşlemler";
-            this.islembtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.islembtn.UseVisualStyleBackColor = true;
-            this.islembtn.Click += new System.EventHandler(this.islembtn_Click);
-            // 
-            // talepbtn
-            // 
-            this.talepbtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.talepbtn.FlatAppearance.BorderSize = 0;
-            this.talepbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.talepbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.talepbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.talepbtn.Font = new System.Drawing.Font("Open Sans ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.talepbtn.ForeColor = System.Drawing.Color.White;
-            this.talepbtn.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
-            this.talepbtn.IconColor = System.Drawing.Color.White;
-            this.talepbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.talepbtn.IconSize = 36;
-            this.talepbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.talepbtn.Location = new System.Drawing.Point(0, 122);
-            this.talepbtn.Name = "talepbtn";
-            this.talepbtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.talepbtn.Size = new System.Drawing.Size(200, 40);
-            this.talepbtn.TabIndex = 108;
-            this.talepbtn.Text = "Talepler";
-            this.talepbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.talepbtn.UseVisualStyleBackColor = true;
-            this.talepbtn.Click += new System.EventHandler(this.talepbtn_Click);
-            // 
-            // depobtn
-            // 
-            this.depobtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.depobtn.FlatAppearance.BorderSize = 0;
-            this.depobtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.depobtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.depobtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.depobtn.Font = new System.Drawing.Font("Open Sans ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.depobtn.ForeColor = System.Drawing.Color.White;
-            this.depobtn.IconChar = FontAwesome.Sharp.IconChar.Warehouse;
-            this.depobtn.IconColor = System.Drawing.Color.White;
-            this.depobtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.depobtn.IconSize = 36;
-            this.depobtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.depobtn.Location = new System.Drawing.Point(0, 82);
-            this.depobtn.Name = "depobtn";
-            this.depobtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.depobtn.Size = new System.Drawing.Size(200, 40);
-            this.depobtn.TabIndex = 107;
-            this.depobtn.Text = "Depo";
-            this.depobtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.depobtn.UseVisualStyleBackColor = true;
-            this.depobtn.Click += new System.EventHandler(this.depobtn_Click);
             // 
             // panel5
             // 
@@ -333,6 +193,172 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // onayBtn
+            // 
+            this.onayBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.onayBtn.FlatAppearance.BorderSize = 0;
+            this.onayBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.onayBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.onayBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.onayBtn.Font = new System.Drawing.Font("Open Sans ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.onayBtn.ForeColor = System.Drawing.Color.White;
+            this.onayBtn.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.onayBtn.IconColor = System.Drawing.Color.White;
+            this.onayBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.onayBtn.IconSize = 36;
+            this.onayBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.onayBtn.Location = new System.Drawing.Point(0, 202);
+            this.onayBtn.Name = "onayBtn";
+            this.onayBtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.onayBtn.Size = new System.Drawing.Size(200, 40);
+            this.onayBtn.TabIndex = 111;
+            this.onayBtn.Text = "Talep Onay";
+            this.onayBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.onayBtn.UseVisualStyleBackColor = true;
+            this.onayBtn.Click += new System.EventHandler(this.onayBtn_Click);
+            // 
+            // clear
+            // 
+            this.clear.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.clear.FlatAppearance.BorderSize = 0;
+            this.clear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.clear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clear.Font = new System.Drawing.Font("Open Sans ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.clear.ForeColor = System.Drawing.Color.White;
+            this.clear.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.clear.IconColor = System.Drawing.Color.White;
+            this.clear.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.clear.IconSize = 36;
+            this.clear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.clear.Location = new System.Drawing.Point(0, 560);
+            this.clear.Name = "clear";
+            this.clear.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.clear.Size = new System.Drawing.Size(200, 40);
+            this.clear.TabIndex = 110;
+            this.clear.Text = "Sıfırla";
+            this.clear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.clear_Click);
+            // 
+            // islembtn
+            // 
+            this.islembtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.islembtn.FlatAppearance.BorderSize = 0;
+            this.islembtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.islembtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.islembtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.islembtn.Font = new System.Drawing.Font("Open Sans ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.islembtn.ForeColor = System.Drawing.Color.White;
+            this.islembtn.IconChar = FontAwesome.Sharp.IconChar.History;
+            this.islembtn.IconColor = System.Drawing.Color.White;
+            this.islembtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.islembtn.IconSize = 36;
+            this.islembtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.islembtn.Location = new System.Drawing.Point(0, 162);
+            this.islembtn.Name = "islembtn";
+            this.islembtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.islembtn.Size = new System.Drawing.Size(200, 40);
+            this.islembtn.TabIndex = 109;
+            this.islembtn.Text = "İşlemler";
+            this.islembtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.islembtn.UseVisualStyleBackColor = true;
+            this.islembtn.Click += new System.EventHandler(this.islembtn_Click);
+            // 
+            // talepbtn
+            // 
+            this.talepbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.talepbtn.FlatAppearance.BorderSize = 0;
+            this.talepbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.talepbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.talepbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.talepbtn.Font = new System.Drawing.Font("Open Sans ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.talepbtn.ForeColor = System.Drawing.Color.White;
+            this.talepbtn.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
+            this.talepbtn.IconColor = System.Drawing.Color.White;
+            this.talepbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.talepbtn.IconSize = 36;
+            this.talepbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.talepbtn.Location = new System.Drawing.Point(0, 122);
+            this.talepbtn.Name = "talepbtn";
+            this.talepbtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.talepbtn.Size = new System.Drawing.Size(200, 40);
+            this.talepbtn.TabIndex = 108;
+            this.talepbtn.Text = "Talepler";
+            this.talepbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.talepbtn.UseVisualStyleBackColor = true;
+            this.talepbtn.Click += new System.EventHandler(this.talepbtn_Click);
+            // 
+            // depobtn
+            // 
+            this.depobtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.depobtn.FlatAppearance.BorderSize = 0;
+            this.depobtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.depobtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.depobtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.depobtn.Font = new System.Drawing.Font("Open Sans ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.depobtn.ForeColor = System.Drawing.Color.White;
+            this.depobtn.IconChar = FontAwesome.Sharp.IconChar.Warehouse;
+            this.depobtn.IconColor = System.Drawing.Color.White;
+            this.depobtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.depobtn.IconSize = 36;
+            this.depobtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.depobtn.Location = new System.Drawing.Point(0, 82);
+            this.depobtn.Name = "depobtn";
+            this.depobtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.depobtn.Size = new System.Drawing.Size(200, 40);
+            this.depobtn.TabIndex = 107;
+            this.depobtn.Text = "Depo";
+            this.depobtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.depobtn.UseVisualStyleBackColor = true;
+            this.depobtn.Click += new System.EventHandler(this.depobtn_Click);
+            // 
+            // minimaze
+            // 
+            this.minimaze.Dock = System.Windows.Forms.DockStyle.Right;
+            this.minimaze.FlatAppearance.BorderSize = 0;
+            this.minimaze.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.minimaze.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.minimaze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimaze.Font = new System.Drawing.Font("Open Sans Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.minimaze.ForeColor = System.Drawing.Color.Gray;
+            this.minimaze.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.minimaze.IconColor = System.Drawing.Color.Gray;
+            this.minimaze.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.minimaze.IconSize = 18;
+            this.minimaze.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.minimaze.Location = new System.Drawing.Point(970, 0);
+            this.minimaze.Name = "minimaze";
+            this.minimaze.Size = new System.Drawing.Size(50, 30);
+            this.minimaze.TabIndex = 107;
+            this.minimaze.UseVisualStyleBackColor = true;
+            this.minimaze.Click += new System.EventHandler(this.minimaze_Click_1);
+            this.minimaze.MouseEnter += new System.EventHandler(this.minimaze_MouseEnter);
+            this.minimaze.MouseLeave += new System.EventHandler(this.minimaze_MouseLeave);
+            // 
+            // maximaze
+            // 
+            this.maximaze.Dock = System.Windows.Forms.DockStyle.Right;
+            this.maximaze.FlatAppearance.BorderSize = 0;
+            this.maximaze.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.maximaze.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.maximaze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.maximaze.Font = new System.Drawing.Font("Open Sans Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.maximaze.ForeColor = System.Drawing.Color.Gray;
+            this.maximaze.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.maximaze.IconColor = System.Drawing.Color.Gray;
+            this.maximaze.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.maximaze.IconSize = 18;
+            this.maximaze.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.maximaze.Location = new System.Drawing.Point(1020, 0);
+            this.maximaze.Name = "maximaze";
+            this.maximaze.Size = new System.Drawing.Size(50, 30);
+            this.maximaze.TabIndex = 104;
+            this.maximaze.UseVisualStyleBackColor = true;
+            this.maximaze.Click += new System.EventHandler(this.maximaze_Click_1);
+            this.maximaze.MouseEnter += new System.EventHandler(this.maximaze_MouseEnter);
+            this.maximaze.MouseLeave += new System.EventHandler(this.maximaze_MouseLeave);
+            // 
             // close
             // 
             this.close.Dock = System.Windows.Forms.DockStyle.Right;
@@ -369,7 +395,7 @@
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Open Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.MinimumSize = new System.Drawing.Size(1120, 630);
+            this.MinimumSize = new System.Drawing.Size(1136, 646);
             this.Name = "main_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.main_form_Load);
@@ -403,5 +429,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton clear;
         private FontAwesome.Sharp.IconButton close;
+        private FontAwesome.Sharp.IconButton onayBtn;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace depo_proje
 {
-    partial class wareEdit
+    partial class demandEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(wareEdit));
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.uyari = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(demandEdit));
+            this.urunName = new System.Windows.Forms.TextBox();
             this.miktarNum = new System.Windows.Forms.NumericUpDown();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.birimCmb = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -42,57 +39,31 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.close = new depo_proje.mainButtons();
+            this.dragPnl = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.close = new depo_proje.mainButtons();
             this.editButton = new depo_proje.mainButtons();
-            this.urunName = new System.Windows.Forms.TextBox();
-            this.panel3.SuspendLayout();
+            this.uyari = new System.Windows.Forms.Label();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.miktarNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.dragPnl.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel3
+            // urunName
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(5);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(420, 30);
-            this.panel3.TabIndex = 106;
-            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
-            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
-            this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Enabled = false;
-            this.label4.Font = new System.Drawing.Font("Open Sans Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.label4.Location = new System.Drawing.Point(12, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(181, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Depo Ürün Düzenleme";
-            // 
-            // uyari
-            // 
-            this.uyari.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.uyari.AutoSize = true;
-            this.uyari.Font = new System.Drawing.Font("Open Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.uyari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.uyari.Location = new System.Drawing.Point(74, 475);
-            this.uyari.Margin = new System.Windows.Forms.Padding(20);
-            this.uyari.Name = "uyari";
-            this.uyari.Size = new System.Drawing.Size(272, 27);
-            this.uyari.TabIndex = 131;
-            this.uyari.Text = "Düzenleme İşlemi Başarısız!";
-            this.uyari.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.uyari.Visible = false;
+            this.urunName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.urunName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.urunName.Enabled = false;
+            this.urunName.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.urunName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.urunName.Location = new System.Drawing.Point(141, 321);
+            this.urunName.Name = "urunName";
+            this.urunName.Size = new System.Drawing.Size(229, 22);
+            this.urunName.TabIndex = 119;
             // 
             // miktarNum
             // 
@@ -105,21 +76,9 @@
             0,
             0});
             this.miktarNum.Name = "miktarNum";
-            this.miktarNum.Size = new System.Drawing.Size(229, 24);
+            this.miktarNum.Size = new System.Drawing.Size(229, 25);
             this.miktarNum.TabIndex = 1;
             this.miktarNum.ThousandsSeparator = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(135, 75);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 180);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 130;
-            this.pictureBox1.TabStop = false;
             // 
             // birimCmb
             // 
@@ -136,7 +95,7 @@
             "Litre"});
             this.birimCmb.Location = new System.Drawing.Point(141, 416);
             this.birimCmb.Name = "birimCmb";
-            this.birimCmb.Size = new System.Drawing.Size(229, 30);
+            this.birimCmb.Size = new System.Drawing.Size(229, 31);
             this.birimCmb.TabIndex = 2;
             // 
             // label3
@@ -199,20 +158,17 @@
             this.panel1.Size = new System.Drawing.Size(318, 2);
             this.panel1.TabIndex = 124;
             // 
-            // timer1
+            // pictureBox1
             // 
-            this.timer1.Interval = 30;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 30;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // timer3
-            // 
-            this.timer3.Interval = 1000;
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(135, 75);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 180);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 130;
+            this.pictureBox1.TabStop = false;
             // 
             // close
             // 
@@ -239,6 +195,42 @@
             this.close.UseVisualStyleBackColor = true;
             this.close.Click += new System.EventHandler(this.close_Click);
             // 
+            // dragPnl
+            // 
+            this.dragPnl.BackColor = System.Drawing.Color.Transparent;
+            this.dragPnl.Controls.Add(this.label4);
+            this.dragPnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dragPnl.Location = new System.Drawing.Point(0, 0);
+            this.dragPnl.Margin = new System.Windows.Forms.Padding(5);
+            this.dragPnl.Name = "dragPnl";
+            this.dragPnl.Size = new System.Drawing.Size(420, 30);
+            this.dragPnl.TabIndex = 132;
+            this.dragPnl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragPnl_MouseDown);
+            this.dragPnl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dragPnl_MouseMove);
+            this.dragPnl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dragPnl_MouseUp);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Enabled = false;
+            this.label4.Font = new System.Drawing.Font("Open Sans Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.label4.Location = new System.Drawing.Point(12, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(141, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Talep Düzenleme";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 30;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 30;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // editButton
             // 
             this.editButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
@@ -256,56 +248,64 @@
             this.editButton.Margin = new System.Windows.Forms.Padding(10);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(154, 50);
-            this.editButton.TabIndex = 3;
+            this.editButton.TabIndex = 4;
             this.editButton.Text = "Düzenle";
             this.editButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.editButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
-            // urunName
+            // uyari
             // 
-            this.urunName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.urunName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.urunName.Enabled = false;
-            this.urunName.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.urunName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.urunName.Location = new System.Drawing.Point(141, 321);
-            this.urunName.Name = "urunName";
-            this.urunName.Size = new System.Drawing.Size(229, 22);
-            this.urunName.TabIndex = 132;
+            this.uyari.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uyari.AutoSize = true;
+            this.uyari.Font = new System.Drawing.Font("Open Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.uyari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.uyari.Location = new System.Drawing.Point(74, 475);
+            this.uyari.Margin = new System.Windows.Forms.Padding(20);
+            this.uyari.Name = "uyari";
+            this.uyari.Size = new System.Drawing.Size(272, 27);
+            this.uyari.TabIndex = 133;
+            this.uyari.Text = "Düzenleme İşlemi Başarısız!";
+            this.uyari.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uyari.Visible = false;
             // 
-            // wareEdit
+            // timer3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.timer3.Interval = 1000;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // demandEdit
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(420, 600);
-            this.Controls.Add(this.urunName);
             this.Controls.Add(this.uyari);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.miktarNum);
-            this.Controls.Add(this.close);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.birimCmb);
             this.Controls.Add(this.editButton);
+            this.Controls.Add(this.dragPnl);
+            this.Controls.Add(this.urunName);
+            this.Controls.Add(this.miktarNum);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.birimCmb);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label2);
-            this.Font = new System.Drawing.Font("Open Sans Medium", 11.25F, System.Drawing.FontStyle.Bold);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.close);
+            this.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "wareEdit";
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Name = "demandEdit";
             this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "wareEdit";
-            this.Load += new System.EventHandler(this.wareEdit_Load);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.Text = "demandEdit";
+            this.Load += new System.EventHandler(this.demandEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.miktarNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.dragPnl.ResumeLayout(false);
+            this.dragPnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,9 +313,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label uyari;
+        private System.Windows.Forms.TextBox urunName;
         private System.Windows.Forms.NumericUpDown miktarNum;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox birimCmb;
@@ -324,12 +322,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private mainButtons editButton;
         private System.Windows.Forms.Panel panel1;
         private mainButtons close;
+        private System.Windows.Forms.Panel dragPnl;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private mainButtons editButton;
+        private System.Windows.Forms.Label uyari;
         private System.Windows.Forms.Timer timer3;
-        private System.Windows.Forms.TextBox urunName;
     }
 }
