@@ -20,8 +20,8 @@ namespace depo_proje
         }
 
         private SQLiteConnection conn = new SQLiteConnection("Data Source = depo.db");
-        private double sayfaSayi, sayi = 1;
-        private int bSayfa = 0;
+        private double sayfaSayi;
+        private int bSayfa = 0, sayi = 1;
 
         private void dataGosterge(int a)
         {
@@ -36,7 +36,7 @@ namespace depo_proje
 
         private void warehouse_form_Load(object sender, EventArgs e)
         {
-            dataGosterge(0);
+            dataGosterge(bSayfa);
             conn.Open();
             SQLiteCommand cmd = new SQLiteCommand($"select count(*) from depo", conn);
             SQLiteDataReader rdr = cmd.ExecuteReader();
@@ -44,7 +44,6 @@ namespace depo_proje
             {
                 sayfaSayi = Math.Ceiling(Convert.ToDouble(rdr[0]) / 50);
             }
-
             sayfaLbl.Text = $"{sayi}/{sayfaSayi}";
             conn.Close();
         }

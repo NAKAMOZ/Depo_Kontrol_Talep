@@ -184,11 +184,6 @@ namespace depo_proje
             OpenChildForm(new demand_form());
         }
 
-        private void islembtn_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-        }
-
         private void onayBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
