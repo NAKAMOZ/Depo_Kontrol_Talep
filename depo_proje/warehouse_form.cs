@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Data.OleDb;
-using System.Data.SQLite;
 
 namespace depo_proje
 {
