@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Data.OleDb;
 
 namespace depo_proje
 {
@@ -18,46 +19,34 @@ namespace depo_proje
             InitializeComponent();
         }
 
-        private SQLiteConnection conn = new SQLiteConnection(@"Data Source = depo.db");
-        private double sayfaSayi;
-        private int bSayfa = 0, sayi = 1;
+        private connectionString conn = new connectionString();
 
-        private void dataGosterge(int a)
+        private void dataGosterge()
         {
-            conn.Open();
-            SQLiteDataAdapter adapt = new SQLiteDataAdapter($"SELECT id,t_urun,t_urun_miktar,t_urun_birim,strftime('%H:%M %d/%m/%Y',t_tarih) t_tarih,iif(t_onay==1,'Onaylandı',iif(t_onay==0,'Onaylanmadı','Reddedildi')) t_onay FROM talepler where gorunurluk = 1 LIMIT 50 OFFSET {a}", conn);
+            OleDbDataAdapter adapt = new OleDbDataAdapter($"SELECT id,t_urun,t_urun_miktar,t_urun_birim,t_tarih,t_onay FROM talepler", conn.conn());
             DataSet dset = new DataSet();
-            adapt.Fill(dset, "info");
-            dMalzemeler.DataSource = dset.Tables[0];
-            conn.Close();
+            adapt.Fill(dset, "talepler");
+            dMalzemeler.DataSource = dset.Tables["talepler"];
+            conn.conn().Close();
             dMalzemeler.Select();
         }
 
         private void demand_form_Load(object sender, EventArgs e)
         {
-            dataGosterge(bSayfa);
-            conn.Open();
-            SQLiteCommand cmd = new SQLiteCommand($"select count(*) from depo", conn);
-            SQLiteDataReader rdr = cmd.ExecuteReader();
-            if (rdr.Read())
-            {
-                sayfaSayi = Math.Ceiling(Convert.ToDouble(rdr[0]) / 50);
-            }
-            sayfaLbl.Text = $"{sayi}/{sayfaSayi}";
-            conn.Close();
+            dataGosterge();
         }
 
         private void delBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                conn.Open();
                 int rowIndex = dMalzemeler.CurrentCell.RowIndex;
                 string rowID = dMalzemeler.Rows[rowIndex].Cells[0].Value.ToString();
-                SQLiteCommand cmd = new SQLiteCommand($"UPDATE talepler SET gorunurluk=0 WHERE id={rowID}", conn);
+                OleDbCommand cmd = new OleDbCommand($"DELETE FROM talepler WHERE id={rowID}", conn.conn());
                 cmd.ExecuteNonQuery();
-                conn.Close();
-                dataGosterge(bSayfa);
+                conn.conn().Close();
+                System.Threading.Thread.Sleep(750);
+                dataGosterge();
             }
             catch
             {
@@ -67,19 +56,18 @@ namespace depo_proje
 
         private void mainButtons2_Click(object sender, EventArgs e)
         {
-            dataGosterge(0);
+            dataGosterge();
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
             if (searchTxt.Text != "")
             {
-                conn.Open();
-                SQLiteDataAdapter adapt = new SQLiteDataAdapter($"SELECT id,t_urun,t_urun_miktar,t_urun_birim,strftime('%H:%M %d/%m/%Y',t_tarih) t_tarih,iif(t_onay==1,'Onaylandı',iif(t_onay==0,'Onaylanmadı','Reddedildi')) t_onay FROM talepler WHERE (t_urun LIKE '%{searchTxt.Text}%' OR id='{searchTxt.Text}') AND gorunurluk=1;", conn);
+                OleDbDataAdapter adapt = new OleDbDataAdapter($"SELECT * from talepler where t_urun like '%{searchTxt.Text}%' or id like '%{searchTxt.Text}%'", conn.conn());
                 DataSet dset = new DataSet();
-                adapt.Fill(dset, "info");
-                dMalzemeler.DataSource = dset.Tables[0];
-                conn.Close();
+                adapt.Fill(dset, "talepler");
+                dMalzemeler.DataSource = dset.Tables["talepler"];
+                conn.conn().Close();
                 dMalzemeler.Select();
             }
         }
@@ -99,28 +87,6 @@ namespace depo_proje
             dEdit.urunMiktar = dMalzemeler.Rows[rowIndex].Cells[2].Value.ToString();
             dEdit.urunBirim = dMalzemeler.Rows[rowIndex].Cells[3].Value.ToString();
             dEdit.Show();
-        }
-
-        private void nextPageBtn_Click(object sender, EventArgs e)
-        {
-            if (sayi != sayfaSayi)
-            {
-                bSayfa += 50;
-                dataGosterge(bSayfa);
-                sayi += 1;
-                sayfaLbl.Text = $"{sayi}/{sayfaSayi}";
-            }
-        }
-
-        private void backPageBtn_Click(object sender, EventArgs e)
-        {
-            if (bSayfa != 0)
-            {
-                bSayfa -= 50;
-                dataGosterge(bSayfa);
-                sayi -= 1;
-                sayfaLbl.Text = $"{sayi}/{sayfaSayi}";
-            }
         }
     }
 }

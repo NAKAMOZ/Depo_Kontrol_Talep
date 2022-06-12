@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Runtime.InteropServices;
 using FontAwesome.Sharp;
+using System.Data.OleDb;
 
 namespace depo_proje
 {
@@ -19,7 +20,7 @@ namespace depo_proje
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        private SQLiteConnection conn = new SQLiteConnection("Data Source = depo.db");
+        private connectionString conn = new connectionString();
 
         public main_form()
         {
@@ -100,14 +101,13 @@ namespace depo_proje
                     onayBtn.Visible = false;
                 }
                 isimbtn.Text = isim;
-                conn.Open();
-                SQLiteCommand cmd = new SQLiteCommand($"select yetki_adi from yetkiler where id={yetki}", conn);
-                SQLiteDataReader dr = cmd.ExecuteReader();
+                OleDbCommand cmd = new OleDbCommand($"select yetki_adi from yetkiler where id={yetki}", conn.conn());
+                OleDbDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
                     yetki = dr[0].ToString();
                 }
-                conn.Close();
+                conn.conn().Close();
                 yetkibtn.Text = yetki;
             }
 

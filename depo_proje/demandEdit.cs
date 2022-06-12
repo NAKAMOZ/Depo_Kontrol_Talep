@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using System.Data.OleDb;
 using System.Diagnostics.Eventing.Reader;
 
 namespace depo_proje
@@ -21,7 +21,7 @@ namespace depo_proje
 
         bool drag = false;
         Point start_point = new Point(0, 0);
-        private SQLiteConnection conn = new SQLiteConnection(@"Data Source = depo.db");
+        private connectionString conn = new connectionString();
         public string urunId, urunIsim, urunMiktar, urunBirim;
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -89,10 +89,9 @@ namespace depo_proje
             {
                 try
                 {
-                    conn.Open();
-                    SQLiteCommand dEditCmd = new SQLiteCommand($"UPDATE talepler SET t_urun_miktar='{miktarNum.Text}',t_urun_birim='{birimCmb.Text}',t_tarih=datetime('now', 'localtime'),t_onay=0 where id={urunId}", conn);
+                    OleDbCommand dEditCmd = new OleDbCommand($"UPDATE talepler SET t_urun_miktar='{miktarNum.Text}',t_urun_birim='{birimCmb.Text}',t_tarih=Now(),t_onay='Onaylanmadı' where id={urunId}", conn.conn());
                     dEditCmd.ExecuteNonQuery();
-                    conn.Close();
+                    conn.conn().Close();
                     uyari.Text = "Düzenleme İşlemi Başarılı!";
                     uyari.Location = new Point(80, 475);
                     uyari.ForeColor = Color.FromArgb(0, 173, 181);

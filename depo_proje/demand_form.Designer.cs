@@ -28,15 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonPanel = new System.Windows.Forms.Panel();
-            this.searchBtn = new depo_proje.mainButtons();
             this.searchTxt = new System.Windows.Forms.TextBox();
-            this.mainButtons2 = new depo_proje.mainButtons();
-            this.editBtn = new depo_proje.mainButtons();
-            this.delBtn = new depo_proje.mainButtons();
-            this.addBtn = new depo_proje.mainButtons();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dMalzemeler = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,10 +40,11 @@
             this.urunBirim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.t_tarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.t_onay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sayfaLbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.backPageBtn = new depo_proje.mainButtons();
-            this.nextPageBtn = new depo_proje.mainButtons();
+            this.searchBtn = new depo_proje.mainButtons();
+            this.mainButtons2 = new depo_proje.mainButtons();
+            this.editBtn = new depo_proje.mainButtons();
+            this.delBtn = new depo_proje.mainButtons();
+            this.addBtn = new depo_proje.mainButtons();
             this.buttonPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dMalzemeler)).BeginInit();
@@ -67,6 +63,117 @@
             this.buttonPanel.Name = "buttonPanel";
             this.buttonPanel.Size = new System.Drawing.Size(920, 70);
             this.buttonPanel.TabIndex = 2;
+            // 
+            // searchTxt
+            // 
+            this.searchTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.searchTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchTxt.Font = new System.Drawing.Font("Open Sans", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.searchTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.searchTxt.Location = new System.Drawing.Point(594, 10);
+            this.searchTxt.Margin = new System.Windows.Forms.Padding(20, 10, 10, 10);
+            this.searchTxt.Name = "searchTxt";
+            this.searchTxt.Size = new System.Drawing.Size(259, 50);
+            this.searchTxt.TabIndex = 107;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dMalzemeler);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 70);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(920, 530);
+            this.panel1.TabIndex = 3;
+            // 
+            // dMalzemeler
+            // 
+            this.dMalzemeler.AllowUserToAddRows = false;
+            this.dMalzemeler.AllowUserToDeleteRows = false;
+            this.dMalzemeler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dMalzemeler.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dMalzemeler.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.dMalzemeler.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dMalzemeler.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dMalzemeler.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dMalzemeler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dMalzemeler.ColumnHeadersHeight = 35;
+            this.dMalzemeler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dMalzemeler.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.urunAdi,
+            this.urunMiktar,
+            this.urunBirim,
+            this.t_tarih,
+            this.t_onay});
+            this.dMalzemeler.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dMalzemeler.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dMalzemeler.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dMalzemeler.EnableHeadersVisualStyles = false;
+            this.dMalzemeler.Location = new System.Drawing.Point(0, 0);
+            this.dMalzemeler.Name = "dMalzemeler";
+            this.dMalzemeler.ReadOnly = true;
+            this.dMalzemeler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dMalzemeler.Size = new System.Drawing.Size(920, 530);
+            this.dMalzemeler.TabIndex = 1;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // urunAdi
+            // 
+            this.urunAdi.DataPropertyName = "t_urun";
+            this.urunAdi.HeaderText = "Ürün Adı";
+            this.urunAdi.Name = "urunAdi";
+            this.urunAdi.ReadOnly = true;
+            // 
+            // urunMiktar
+            // 
+            this.urunMiktar.DataPropertyName = "t_urun_miktar";
+            this.urunMiktar.HeaderText = "Ürün Miktarı";
+            this.urunMiktar.Name = "urunMiktar";
+            this.urunMiktar.ReadOnly = true;
+            // 
+            // urunBirim
+            // 
+            this.urunBirim.DataPropertyName = "t_urun_birim";
+            this.urunBirim.HeaderText = "Ürün Birimi";
+            this.urunBirim.Name = "urunBirim";
+            this.urunBirim.ReadOnly = true;
+            // 
+            // t_tarih
+            // 
+            this.t_tarih.DataPropertyName = "t_tarih";
+            this.t_tarih.HeaderText = "Talep Tarihi";
+            this.t_tarih.Name = "t_tarih";
+            this.t_tarih.ReadOnly = true;
+            // 
+            // t_onay
+            // 
+            this.t_onay.DataPropertyName = "t_onay";
+            this.t_onay.HeaderText = "Talep Onayı";
+            this.t_onay.Name = "t_onay";
+            this.t_onay.ReadOnly = true;
             // 
             // searchBtn
             // 
@@ -90,19 +197,6 @@
             this.searchBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.searchBtn.UseVisualStyleBackColor = true;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
-            // 
-            // searchTxt
-            // 
-            this.searchTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.searchTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchTxt.Font = new System.Drawing.Font("Open Sans", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.searchTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.searchTxt.Location = new System.Drawing.Point(594, 10);
-            this.searchTxt.Margin = new System.Windows.Forms.Padding(20, 10, 10, 10);
-            this.searchTxt.Name = "searchTxt";
-            this.searchTxt.Size = new System.Drawing.Size(259, 50);
-            this.searchTxt.TabIndex = 107;
             // 
             // mainButtons2
             // 
@@ -192,182 +286,6 @@
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.sayfaLbl);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.backPageBtn);
-            this.panel1.Controls.Add(this.nextPageBtn);
-            this.panel1.Controls.Add(this.dMalzemeler);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 70);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(920, 530);
-            this.panel1.TabIndex = 3;
-            // 
-            // dMalzemeler
-            // 
-            this.dMalzemeler.AllowUserToAddRows = false;
-            this.dMalzemeler.AllowUserToDeleteRows = false;
-            this.dMalzemeler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dMalzemeler.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dMalzemeler.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.dMalzemeler.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dMalzemeler.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.dMalzemeler.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dMalzemeler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dMalzemeler.ColumnHeadersHeight = 35;
-            this.dMalzemeler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dMalzemeler.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.urunAdi,
-            this.urunMiktar,
-            this.urunBirim,
-            this.t_tarih,
-            this.t_onay});
-            this.dMalzemeler.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dMalzemeler.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dMalzemeler.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dMalzemeler.EnableHeadersVisualStyles = false;
-            this.dMalzemeler.Location = new System.Drawing.Point(0, 0);
-            this.dMalzemeler.Name = "dMalzemeler";
-            this.dMalzemeler.ReadOnly = true;
-            this.dMalzemeler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dMalzemeler.Size = new System.Drawing.Size(920, 482);
-            this.dMalzemeler.TabIndex = 1;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // urunAdi
-            // 
-            this.urunAdi.DataPropertyName = "t_urun";
-            this.urunAdi.HeaderText = "Ürün Adı";
-            this.urunAdi.Name = "urunAdi";
-            this.urunAdi.ReadOnly = true;
-            // 
-            // urunMiktar
-            // 
-            this.urunMiktar.DataPropertyName = "t_urun_miktar";
-            this.urunMiktar.HeaderText = "Ürün Miktarı";
-            this.urunMiktar.Name = "urunMiktar";
-            this.urunMiktar.ReadOnly = true;
-            // 
-            // urunBirim
-            // 
-            this.urunBirim.DataPropertyName = "t_urun_birim";
-            this.urunBirim.HeaderText = "Ürün Birimi";
-            this.urunBirim.Name = "urunBirim";
-            this.urunBirim.ReadOnly = true;
-            // 
-            // t_tarih
-            // 
-            this.t_tarih.DataPropertyName = "t_tarih";
-            this.t_tarih.HeaderText = "Talep Tarihi";
-            this.t_tarih.Name = "t_tarih";
-            this.t_tarih.ReadOnly = true;
-            // 
-            // t_onay
-            // 
-            this.t_onay.DataPropertyName = "t_onay";
-            this.t_onay.HeaderText = "Talep Onayı";
-            this.t_onay.Name = "t_onay";
-            this.t_onay.ReadOnly = true;
-            // 
-            // sayfaLbl
-            // 
-            this.sayfaLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.sayfaLbl.AutoSize = true;
-            this.sayfaLbl.Font = new System.Drawing.Font("Open Sans SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.sayfaLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.sayfaLbl.Location = new System.Drawing.Point(183, 495);
-            this.sayfaLbl.Margin = new System.Windows.Forms.Padding(10);
-            this.sayfaLbl.Name = "sayfaLbl";
-            this.sayfaLbl.Size = new System.Drawing.Size(37, 24);
-            this.sayfaLbl.TabIndex = 116;
-            this.sayfaLbl.Text = "0/0";
-            this.sayfaLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.label1.Location = new System.Drawing.Point(19, 495);
-            this.label1.Margin = new System.Windows.Forms.Padding(10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 24);
-            this.label1.TabIndex = 115;
-            this.label1.Text = "Bulunulan Sayfa";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // backPageBtn
-            // 
-            this.backPageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.backPageBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.backPageBtn.FlatAppearance.BorderSize = 3;
-            this.backPageBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
-            this.backPageBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.backPageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backPageBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.backPageBtn.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
-            this.backPageBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.backPageBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.backPageBtn.IconSize = 20;
-            this.backPageBtn.Location = new System.Drawing.Point(840, 495);
-            this.backPageBtn.Margin = new System.Windows.Forms.Padding(10);
-            this.backPageBtn.Name = "backPageBtn";
-            this.backPageBtn.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.backPageBtn.Size = new System.Drawing.Size(25, 25);
-            this.backPageBtn.TabIndex = 114;
-            this.backPageBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.backPageBtn.UseVisualStyleBackColor = true;
-            this.backPageBtn.Click += new System.EventHandler(this.backPageBtn_Click);
-            // 
-            // nextPageBtn
-            // 
-            this.nextPageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.nextPageBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.nextPageBtn.FlatAppearance.BorderSize = 3;
-            this.nextPageBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
-            this.nextPageBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.nextPageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nextPageBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.nextPageBtn.IconChar = FontAwesome.Sharp.IconChar.AngleRight;
-            this.nextPageBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.nextPageBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.nextPageBtn.IconSize = 20;
-            this.nextPageBtn.Location = new System.Drawing.Point(885, 495);
-            this.nextPageBtn.Margin = new System.Windows.Forms.Padding(10);
-            this.nextPageBtn.Name = "nextPageBtn";
-            this.nextPageBtn.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.nextPageBtn.Size = new System.Drawing.Size(25, 25);
-            this.nextPageBtn.TabIndex = 113;
-            this.nextPageBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.nextPageBtn.UseVisualStyleBackColor = true;
-            this.nextPageBtn.Click += new System.EventHandler(this.nextPageBtn_Click);
-            // 
             // demand_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -384,7 +302,6 @@
             this.buttonPanel.ResumeLayout(false);
             this.buttonPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dMalzemeler)).EndInit();
             this.ResumeLayout(false);
 
@@ -407,9 +324,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn urunBirim;
         private System.Windows.Forms.DataGridViewTextBoxColumn t_tarih;
         private System.Windows.Forms.DataGridViewTextBoxColumn t_onay;
-        private System.Windows.Forms.Label sayfaLbl;
-        private System.Windows.Forms.Label label1;
-        private mainButtons backPageBtn;
-        private mainButtons nextPageBtn;
     }
 }

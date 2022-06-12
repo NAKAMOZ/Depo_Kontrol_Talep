@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace depo_proje
 {
@@ -20,7 +21,7 @@ namespace depo_proje
             InitializeComponent();
         }
 
-        sqliteconn conn = new sqliteconn();
+        private connectionString conn = new connectionString();
 
         private void giris_Load(object sender, EventArgs e)
         {
@@ -87,8 +88,8 @@ namespace depo_proje
         {
             string g_adi = giristxt.Text;
             string sifre = pwordtxt.Text;
-            SQLiteCommand cmd = new SQLiteCommand($"SELECT * from calisanlar where k_adi='{g_adi}' and sifre='{sifre}'", conn.conn());
-            SQLiteDataReader reader = cmd.ExecuteReader();
+            OleDbCommand cmd = new OleDbCommand($"SELECT * from calisanlar where k_adi='{g_adi}' and sifre='{sifre}'", conn.conn());
+            OleDbDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
                 warehouse_form ware = new warehouse_form();

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using System.Data.OleDb;
 
 namespace depo_proje
 {
@@ -18,16 +18,16 @@ namespace depo_proje
             InitializeComponent();
         }
 
-        private SQLiteConnection conn = new SQLiteConnection("Data Source = depo.db");
+        private connectionString conn = new connectionString();
 
         private void dataGosterge()
         {
-            conn.Open();
-            SQLiteDataAdapter adapt = new SQLiteDataAdapter($"SELECT id,t_urun,t_urun_miktar,t_urun_birim,strftime('%H:%M %d/%m/%Y',t_tarih) t_tarih FROM talepler where t_onay = 0", conn);
+            OleDbDataAdapter adapt = new OleDbDataAdapter($"SELECT id,t_urun,t_urun_miktar,t_urun_birim,t_tarih FROM talepler where t_onay = 'Onaylanmadı'", conn.conn());
             DataSet dset = new DataSet();
-            adapt.Fill(dset, "info");
-            dTalepler.DataSource = dset.Tables[0];
-            conn.Close();
+            adapt.Fill(dset, "talepler");
+            dTalepler.DataSource = dset.Tables["talepler"];
+            conn.conn().Close();
+            conn.conn().Close();
         }
 
         private void demandCheck_Load(object sender, EventArgs e)
@@ -40,20 +40,20 @@ namespace depo_proje
             if (dTalepler.Columns[e.ColumnIndex].Name == "onay")
             {
                 int rowIndex = dTalepler.CurrentCell.RowIndex;
-                conn.Open();
-                SQLiteCommand cmd = new SQLiteCommand($"UPDATE talepler SET t_onay=1 where id={dTalepler.Rows[rowIndex].Cells[2].Value.ToString()}", conn);
+                OleDbCommand cmd = new OleDbCommand($"UPDATE talepler SET t_onay='Onaylandı' where id={dTalepler.Rows[rowIndex].Cells[2].Value.ToString()}", conn.conn());
                 cmd.ExecuteNonQuery();
-                conn.Close();
+                conn.conn().Close();
+                System.Threading.Thread.Sleep(750);
                 dataGosterge();
             }
 
             if (dTalepler.Columns[e.ColumnIndex].Name == "reddet")
             {
                 int rowIndex = dTalepler.CurrentCell.RowIndex;
-                conn.Open();
-                SQLiteCommand cmd = new SQLiteCommand($"UPDATE talepler SET t_onay=2 where id={dTalepler.Rows[rowIndex].Cells[2].Value.ToString()}", conn);
+                OleDbCommand cmd = new OleDbCommand($"UPDATE talepler SET t_onay='Reddedildi' where id={dTalepler.Rows[rowIndex].Cells[2].Value.ToString()}", conn.conn());
                 cmd.ExecuteNonQuery();
-                conn.Close();
+                conn.conn().Close();
+                System.Threading.Thread.Sleep(750);
                 dataGosterge();
             }
         }

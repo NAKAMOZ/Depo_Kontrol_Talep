@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using System.Data.OleDb;
 
 namespace depo_proje
 {
@@ -19,7 +19,7 @@ namespace depo_proje
         }
         bool drag = false;
         Point start_point = new Point(0, 0);
-        private SQLiteConnection conn = new SQLiteConnection(@"Data Source = depo.db");
+        private connectionString conn = new connectionString();
 
         private void panel3_MouseDown(object sender, MouseEventArgs e)
         {
@@ -78,10 +78,9 @@ namespace depo_proje
             {
                 try
                 {
-                    conn.Open();
-                    SQLiteCommand addCommand = new SQLiteCommand($"INSERT INTO talepler (t_urun, t_urun_miktar, t_urun_birim, t_tarih, t_onay, gorunurluk) values('{urunName.Text}',{miktarNum.Text},'{birimCmb.Text}',datetime('now','localtime'),0,1);", conn);
+                    OleDbCommand addCommand = new OleDbCommand($"INSERT INTO talepler (t_urun, t_urun_miktar, t_urun_birim, t_tarih, t_onay) values('{urunName.Text}',{miktarNum.Text},'{birimCmb.Text}',Now(),'Onaylanmadı');", conn.conn());
                     addCommand.ExecuteNonQuery();
-                    conn.Close();
+                    conn.conn().Close();
                     uyari.Visible = true;
                     uyari.Text = "Talep İşlemi Başarılı!";
                     uyari.Location = new Point(107, 475);

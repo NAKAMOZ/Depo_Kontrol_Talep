@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using System.Data.OleDb;
 
 namespace depo_proje
 {
@@ -15,7 +15,7 @@ namespace depo_proje
     {
         bool drag = false;
         Point start_point = new Point(0, 0);
-        private SQLiteConnection conn = new SQLiteConnection("Data Source = depo.db");
+        private connectionString conn = new connectionString();
         public wareEdit()
         {
             InitializeComponent();
@@ -71,12 +71,11 @@ namespace depo_proje
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            conn.Open();
             if (miktarNum.Text != "0" && birimCmb.Text != "")
             {
                 try
                 {
-                    SQLiteCommand cmd = new SQLiteCommand($"UPDATE depo SET miktar ='{miktarNum.Text}',birim='{birimCmb.Text}' where id={urunId}", conn);
+                    OleDbCommand cmd = new OleDbCommand($"UPDATE depo SET miktar ='{miktarNum.Text}',birim='{birimCmb.Text}' where id={urunId}", conn.conn());
                     cmd.ExecuteNonQuery();
                     uyari.Text = "Düzenleme İşlemi Başarılı!";
                     uyari.Location = new Point(80, 475);
@@ -100,7 +99,7 @@ namespace depo_proje
                 uyari.ForeColor = Color.FromArgb(215, 35, 35);
                 uyari.Visible = true;
             }
-            conn.Close();
+            conn.conn().Close();
         }
 
         private void close_Click(object sender, EventArgs e)
