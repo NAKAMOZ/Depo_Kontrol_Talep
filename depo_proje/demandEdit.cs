@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Diagnostics.Eventing.Reader;
 
 namespace depo_proje
 {
@@ -21,6 +22,7 @@ namespace depo_proje
         bool drag = false;
         Point start_point = new Point(0, 0);
         private SQLiteConnection conn = new SQLiteConnection(@"Data Source = depo.db");
+        public string urunId, urunIsim, urunMiktar, urunBirim;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -50,6 +52,9 @@ namespace depo_proje
 
         private void demandEdit_Load(object sender, EventArgs e)
         {
+            urunName.Text = urunIsim;
+            miktarNum.Text = urunMiktar;
+            birimCmb.Text = urunBirim;
             timer1.Start();
         }
 
@@ -80,7 +85,36 @@ namespace depo_proje
 
         private void editButton_Click(object sender, EventArgs e)
         {
-
+            if (miktarNum.Text != "0" && birimCmb.Text != "")
+            {
+                try
+                {
+                    conn.Open();
+                    SQLiteCommand dEditCmd = new SQLiteCommand($"UPDATE talepler SET t_urun_miktar='{miktarNum.Text}',t_urun_birim='{birimCmb.Text}',t_tarih=datetime('now', 'localtime'),t_onay=0 where id={urunId}", conn);
+                    dEditCmd.ExecuteNonQuery();
+                    conn.Close();
+                    uyari.Text = "Düzenleme İşlemi Başarılı!";
+                    uyari.Location = new Point(80, 475);
+                    uyari.ForeColor = Color.FromArgb(0, 173, 181);
+                    uyari.Visible = true;
+                    editButton.Enabled = false;
+                    timer3.Start();
+                }
+                catch
+                {
+                    uyari.Text = "Düzenleme İşlemi Başarısız!";
+                    uyari.Location = new Point(74, 475);
+                    uyari.ForeColor = Color.FromArgb(215, 35, 35);
+                    uyari.Visible = true;
+                }
+            }
+            else
+            {
+                uyari.Text = "Düzenleme İşlemi Başarısız!";
+                uyari.Location = new Point(74, 475);
+                uyari.ForeColor = Color.FromArgb(215, 35, 35);
+                uyari.Visible = true;
+            }
         }
     }
 }

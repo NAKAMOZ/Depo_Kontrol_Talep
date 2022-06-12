@@ -31,18 +31,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonPanel = new System.Windows.Forms.Panel();
+            this.searchBtn = new depo_proje.mainButtons();
+            this.searchTxt = new System.Windows.Forms.TextBox();
             this.mainButtons2 = new depo_proje.mainButtons();
             this.editBtn = new depo_proje.mainButtons();
             this.delBtn = new depo_proje.mainButtons();
             this.addBtn = new depo_proje.mainButtons();
             this.dMalzemeler = new System.Windows.Forms.DataGridView();
-            this.urunBirim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.urunMiktar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.urunAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urunAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urunMiktar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urunBirim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.searchTxt = new System.Windows.Forms.TextBox();
-            this.searchBtn = new depo_proje.mainButtons();
+            this.sayfaLbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.backPageBtn = new depo_proje.mainButtons();
+            this.nextPageBtn = new depo_proje.mainButtons();
             this.buttonPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dMalzemeler)).BeginInit();
             this.mainPanel.SuspendLayout();
@@ -61,6 +65,42 @@
             this.buttonPanel.Name = "buttonPanel";
             this.buttonPanel.Size = new System.Drawing.Size(920, 70);
             this.buttonPanel.TabIndex = 1;
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.searchBtn.FlatAppearance.BorderSize = 3;
+            this.searchBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.searchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.searchBtn.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.searchBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.searchBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.searchBtn.IconSize = 44;
+            this.searchBtn.Location = new System.Drawing.Point(851, 10);
+            this.searchBtn.Margin = new System.Windows.Forms.Padding(10);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Padding = new System.Windows.Forms.Padding(2, 7, 0, 0);
+            this.searchBtn.Size = new System.Drawing.Size(50, 50);
+            this.searchBtn.TabIndex = 108;
+            this.searchBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // searchTxt
+            // 
+            this.searchTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.searchTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchTxt.Font = new System.Drawing.Font("Open Sans", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.searchTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.searchTxt.Location = new System.Drawing.Point(594, 10);
+            this.searchTxt.Margin = new System.Windows.Forms.Padding(20, 10, 10, 10);
+            this.searchTxt.Name = "searchTxt";
+            this.searchTxt.Size = new System.Drawing.Size(259, 50);
+            this.searchTxt.TabIndex = 107;
             // 
             // mainButtons2
             // 
@@ -154,6 +194,9 @@
             // 
             this.dMalzemeler.AllowUserToAddRows = false;
             this.dMalzemeler.AllowUserToDeleteRows = false;
+            this.dMalzemeler.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dMalzemeler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dMalzemeler.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dMalzemeler.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
@@ -186,35 +229,13 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dMalzemeler.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dMalzemeler.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dMalzemeler.EnableHeadersVisualStyles = false;
             this.dMalzemeler.Location = new System.Drawing.Point(0, 0);
             this.dMalzemeler.Name = "dMalzemeler";
             this.dMalzemeler.ReadOnly = true;
             this.dMalzemeler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dMalzemeler.Size = new System.Drawing.Size(920, 530);
+            this.dMalzemeler.Size = new System.Drawing.Size(920, 482);
             this.dMalzemeler.TabIndex = 0;
-            // 
-            // urunBirim
-            // 
-            this.urunBirim.DataPropertyName = "birim";
-            this.urunBirim.HeaderText = "Ürün Birimi";
-            this.urunBirim.Name = "urunBirim";
-            this.urunBirim.ReadOnly = true;
-            // 
-            // urunMiktar
-            // 
-            this.urunMiktar.DataPropertyName = "miktar";
-            this.urunMiktar.HeaderText = "Ürün Miktarı";
-            this.urunMiktar.Name = "urunMiktar";
-            this.urunMiktar.ReadOnly = true;
-            // 
-            // urunAdi
-            // 
-            this.urunAdi.DataPropertyName = "urun";
-            this.urunAdi.HeaderText = "Ürün Adı";
-            this.urunAdi.Name = "urunAdi";
-            this.urunAdi.ReadOnly = true;
             // 
             // id
             // 
@@ -223,8 +244,33 @@
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
+            // urunAdi
+            // 
+            this.urunAdi.DataPropertyName = "urun";
+            this.urunAdi.HeaderText = "Ürün Adı";
+            this.urunAdi.Name = "urunAdi";
+            this.urunAdi.ReadOnly = true;
+            // 
+            // urunMiktar
+            // 
+            this.urunMiktar.DataPropertyName = "miktar";
+            this.urunMiktar.HeaderText = "Ürün Miktarı";
+            this.urunMiktar.Name = "urunMiktar";
+            this.urunMiktar.ReadOnly = true;
+            // 
+            // urunBirim
+            // 
+            this.urunBirim.DataPropertyName = "birim";
+            this.urunBirim.HeaderText = "Ürün Birimi";
+            this.urunBirim.Name = "urunBirim";
+            this.urunBirim.ReadOnly = true;
+            // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.sayfaLbl);
+            this.mainPanel.Controls.Add(this.label1);
+            this.mainPanel.Controls.Add(this.backPageBtn);
+            this.mainPanel.Controls.Add(this.nextPageBtn);
             this.mainPanel.Controls.Add(this.dMalzemeler);
             this.mainPanel.Cursor = System.Windows.Forms.Cursors.Default;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -233,40 +279,79 @@
             this.mainPanel.Size = new System.Drawing.Size(920, 530);
             this.mainPanel.TabIndex = 2;
             // 
-            // searchTxt
+            // sayfaLbl
             // 
-            this.searchTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.searchTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchTxt.Font = new System.Drawing.Font("Open Sans", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.searchTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.searchTxt.Location = new System.Drawing.Point(594, 10);
-            this.searchTxt.Margin = new System.Windows.Forms.Padding(20, 10, 10, 10);
-            this.searchTxt.Name = "searchTxt";
-            this.searchTxt.Size = new System.Drawing.Size(259, 50);
-            this.searchTxt.TabIndex = 107;
+            this.sayfaLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.sayfaLbl.AutoSize = true;
+            this.sayfaLbl.Font = new System.Drawing.Font("Open Sans SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sayfaLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.sayfaLbl.Location = new System.Drawing.Point(183, 495);
+            this.sayfaLbl.Margin = new System.Windows.Forms.Padding(10);
+            this.sayfaLbl.Name = "sayfaLbl";
+            this.sayfaLbl.Size = new System.Drawing.Size(37, 24);
+            this.sayfaLbl.TabIndex = 112;
+            this.sayfaLbl.Text = "0/0";
+            this.sayfaLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // searchBtn
+            // label1
             // 
-            this.searchBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.searchBtn.FlatAppearance.BorderSize = 3;
-            this.searchBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
-            this.searchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.searchBtn.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.searchBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.searchBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.searchBtn.IconSize = 44;
-            this.searchBtn.Location = new System.Drawing.Point(851, 10);
-            this.searchBtn.Margin = new System.Windows.Forms.Padding(10);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Padding = new System.Windows.Forms.Padding(2, 7, 0, 0);
-            this.searchBtn.Size = new System.Drawing.Size(50, 50);
-            this.searchBtn.TabIndex = 108;
-            this.searchBtn.UseVisualStyleBackColor = true;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Open Sans SemiBold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.label1.Location = new System.Drawing.Point(19, 495);
+            this.label1.Margin = new System.Windows.Forms.Padding(10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(144, 24);
+            this.label1.TabIndex = 111;
+            this.label1.Text = "Bulunulan Sayfa";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // backPageBtn
+            // 
+            this.backPageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.backPageBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.backPageBtn.FlatAppearance.BorderSize = 3;
+            this.backPageBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.backPageBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.backPageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backPageBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.backPageBtn.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            this.backPageBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.backPageBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.backPageBtn.IconSize = 20;
+            this.backPageBtn.Location = new System.Drawing.Point(840, 495);
+            this.backPageBtn.Margin = new System.Windows.Forms.Padding(10);
+            this.backPageBtn.Name = "backPageBtn";
+            this.backPageBtn.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.backPageBtn.Size = new System.Drawing.Size(25, 25);
+            this.backPageBtn.TabIndex = 110;
+            this.backPageBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.backPageBtn.UseVisualStyleBackColor = true;
+            this.backPageBtn.Click += new System.EventHandler(this.backPageBtn_Click);
+            // 
+            // nextPageBtn
+            // 
+            this.nextPageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.nextPageBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.nextPageBtn.FlatAppearance.BorderSize = 3;
+            this.nextPageBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.nextPageBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.nextPageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nextPageBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.nextPageBtn.IconChar = FontAwesome.Sharp.IconChar.AngleRight;
+            this.nextPageBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.nextPageBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.nextPageBtn.IconSize = 20;
+            this.nextPageBtn.Location = new System.Drawing.Point(885, 495);
+            this.nextPageBtn.Margin = new System.Windows.Forms.Padding(10);
+            this.nextPageBtn.Name = "nextPageBtn";
+            this.nextPageBtn.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.nextPageBtn.Size = new System.Drawing.Size(25, 25);
+            this.nextPageBtn.TabIndex = 109;
+            this.nextPageBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.nextPageBtn.UseVisualStyleBackColor = true;
+            this.nextPageBtn.Click += new System.EventHandler(this.nextPageBtn_Click);
             // 
             // warehouse_form
             // 
@@ -286,6 +371,7 @@
             this.buttonPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dMalzemeler)).EndInit();
             this.mainPanel.ResumeLayout(false);
+            this.mainPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -304,5 +390,9 @@
         private System.Windows.Forms.Panel mainPanel;
         private mainButtons searchBtn;
         private System.Windows.Forms.TextBox searchTxt;
+        private mainButtons backPageBtn;
+        private mainButtons nextPageBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label sayfaLbl;
     }
 }

@@ -19,6 +19,7 @@ namespace depo_proje
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        private SQLiteConnection conn = new SQLiteConnection("Data Source = depo.db");
 
         public main_form()
         {
@@ -29,7 +30,6 @@ namespace depo_proje
             panelMenu.Controls.Add(leftBorderBtn);
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
-
         private void OpenChildForm(Form childFrom)
         {
             if (currentChildForm != null)
@@ -52,7 +52,7 @@ namespace depo_proje
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.ForeColor = Color.FromArgb(20,255,236);
+                currentBtn.ForeColor = Color.FromArgb(20, 255, 236);
                 currentBtn.Padding = new Padding(25, 0, 0, 0);
                 currentBtn.IconColor = Color.FromArgb(20, 255, 236);
                 leftBorderBtn.BackColor = Color.FromArgb(20, 255, 236);
@@ -88,13 +88,30 @@ namespace depo_proje
 
         private void main_form_Load(object sender, EventArgs e)
         {
-            isimbtn.Text = isim;
-            yetkibtn.Text = yetki;
             if (yetki == null && isim == null)
             {
                 isimbtn.Text = "isim";
                 yetkibtn.Text = "yetki";
             }
+            else
+            {
+                if (Convert.ToInt32(yetki) < 2)
+                {
+                    onayBtn.Visible = false;
+                }
+                isimbtn.Text = isim;
+                conn.Open();
+                SQLiteCommand cmd = new SQLiteCommand($"select yetki_adi from yetkiler where id={yetki}", conn);
+                SQLiteDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    yetki = dr[0].ToString();
+                }
+                conn.Close();
+                yetkibtn.Text = yetki;
+            }
+
+
         }
 
         private void close_Click(object sender, EventArgs e)
@@ -120,11 +137,13 @@ namespace depo_proje
             {
                 this.WindowState = FormWindowState.Maximized;
                 maximaze.IconChar = IconChar.WindowRestore;
+                this.FormBorderStyle = FormBorderStyle.None;
             }
             else
             {
                 this.WindowState = FormWindowState.Normal;
                 maximaze.IconChar = IconChar.WindowMaximize;
+                this.FormBorderStyle = FormBorderStyle.Sizable;
             }
         }
 
@@ -173,6 +192,21 @@ namespace depo_proje
         private void onayBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+            OpenChildForm(new demandCheck());
+        }
+
+        private void main_form_SizeChanged(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Maximized)
+            {
+                maximaze.IconChar = IconChar.WindowRestore;
+                this.FormBorderStyle = FormBorderStyle.None;
+            }
+            else if (WindowState == FormWindowState.Normal)
+            {
+                maximaze.IconChar = IconChar.WindowMaximize;
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+            }
         }
 
         private void clear_Click(object sender, EventArgs e)

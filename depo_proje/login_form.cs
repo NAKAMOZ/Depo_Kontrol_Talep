@@ -94,13 +94,7 @@ namespace depo_proje
                 warehouse_form ware = new warehouse_form();
                 main_form main = new main_form();
                 main.isim = reader[1].ToString();
-                ware.name = reader[1].ToString();
-                SQLiteCommand cmd1 = new SQLiteCommand($"select * from yetkiler where id={reader[4]}", conn.conn());
-                SQLiteDataReader reader1 = cmd1.ExecuteReader();
-                if (reader1.Read())
-                {
-                    main.yetki = reader1[1].ToString();
-                }
+                main.yetki = reader[4].ToString();
                 main.Show();
                 this.Hide();
             }

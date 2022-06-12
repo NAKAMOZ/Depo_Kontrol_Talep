@@ -118,6 +118,12 @@
     <Compile Include="demandAdd.Designer.cs">
       <DependentUpon>demandAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="demandCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="demandCheck.Designer.cs">
+      <DependentUpon>demandCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="demandEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </Compile>
     <EmbeddedResource Include="demandAdd.resx">
       <DependentUpon>demandAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="demandCheck.resx">
+      <DependentUpon>demandCheck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="demandEdit.resx">
       <DependentUpon>demandEdit.cs</DependentUpon>

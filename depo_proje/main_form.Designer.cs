@@ -30,8 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.minimaze = new FontAwesome.Sharp.IconButton();
+            this.maximaze = new FontAwesome.Sharp.IconButton();
+            this.close = new FontAwesome.Sharp.IconButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.onayBtn = new FontAwesome.Sharp.IconButton();
+            this.clear = new FontAwesome.Sharp.IconButton();
+            this.islembtn = new FontAwesome.Sharp.IconButton();
+            this.talepbtn = new FontAwesome.Sharp.IconButton();
+            this.depobtn = new FontAwesome.Sharp.IconButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.isimbtn = new System.Windows.Forms.Button();
             this.yetkibtn = new System.Windows.Forms.Button();
@@ -41,14 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.onayBtn = new FontAwesome.Sharp.IconButton();
-            this.clear = new FontAwesome.Sharp.IconButton();
-            this.islembtn = new FontAwesome.Sharp.IconButton();
-            this.talepbtn = new FontAwesome.Sharp.IconButton();
-            this.depobtn = new FontAwesome.Sharp.IconButton();
-            this.minimaze = new FontAwesome.Sharp.IconButton();
-            this.maximaze = new FontAwesome.Sharp.IconButton();
-            this.close = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -68,6 +68,75 @@
             this.panel1.Size = new System.Drawing.Size(1120, 30);
             this.panel1.TabIndex = 102;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // minimaze
+            // 
+            this.minimaze.Dock = System.Windows.Forms.DockStyle.Right;
+            this.minimaze.FlatAppearance.BorderSize = 0;
+            this.minimaze.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.minimaze.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.minimaze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimaze.Font = new System.Drawing.Font("Open Sans Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.minimaze.ForeColor = System.Drawing.Color.Gray;
+            this.minimaze.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.minimaze.IconColor = System.Drawing.Color.Gray;
+            this.minimaze.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.minimaze.IconSize = 18;
+            this.minimaze.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.minimaze.Location = new System.Drawing.Point(970, 0);
+            this.minimaze.Name = "minimaze";
+            this.minimaze.Size = new System.Drawing.Size(50, 30);
+            this.minimaze.TabIndex = 107;
+            this.minimaze.UseVisualStyleBackColor = true;
+            this.minimaze.Click += new System.EventHandler(this.minimaze_Click_1);
+            this.minimaze.MouseEnter += new System.EventHandler(this.minimaze_MouseEnter);
+            this.minimaze.MouseLeave += new System.EventHandler(this.minimaze_MouseLeave);
+            // 
+            // maximaze
+            // 
+            this.maximaze.Dock = System.Windows.Forms.DockStyle.Right;
+            this.maximaze.FlatAppearance.BorderSize = 0;
+            this.maximaze.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.maximaze.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.maximaze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.maximaze.Font = new System.Drawing.Font("Open Sans Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.maximaze.ForeColor = System.Drawing.Color.Gray;
+            this.maximaze.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.maximaze.IconColor = System.Drawing.Color.Gray;
+            this.maximaze.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.maximaze.IconSize = 18;
+            this.maximaze.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.maximaze.Location = new System.Drawing.Point(1020, 0);
+            this.maximaze.Name = "maximaze";
+            this.maximaze.Size = new System.Drawing.Size(50, 30);
+            this.maximaze.TabIndex = 104;
+            this.maximaze.UseVisualStyleBackColor = true;
+            this.maximaze.Click += new System.EventHandler(this.maximaze_Click_1);
+            this.maximaze.MouseEnter += new System.EventHandler(this.maximaze_MouseEnter);
+            this.maximaze.MouseLeave += new System.EventHandler(this.maximaze_MouseLeave);
+            // 
+            // close
+            // 
+            this.close.Dock = System.Windows.Forms.DockStyle.Right;
+            this.close.FlatAppearance.BorderSize = 0;
+            this.close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.close.Font = new System.Drawing.Font("Open Sans Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.close.ForeColor = System.Drawing.Color.Gray;
+            this.close.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.close.IconColor = System.Drawing.Color.Gray;
+            this.close.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.close.IconSize = 18;
+            this.close.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.close.Location = new System.Drawing.Point(1070, 0);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(50, 30);
+            this.close.TabIndex = 108;
+            this.close.UseVisualStyleBackColor = true;
+            this.close.Click += new System.EventHandler(this.close_Click);
+            this.close.MouseEnter += new System.EventHandler(this.close_MouseEnter);
+            this.close.MouseLeave += new System.EventHandler(this.close_MouseLeave);
             // 
             // timer1
             // 
@@ -89,109 +158,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 600);
             this.panelMenu.TabIndex = 103;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.panel5.Controls.Add(this.isimbtn);
-            this.panel5.Controls.Add(this.yetkibtn);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(200, 80);
-            this.panel5.TabIndex = 104;
-            // 
-            // isimbtn
-            // 
-            this.isimbtn.Enabled = false;
-            this.isimbtn.FlatAppearance.BorderSize = 0;
-            this.isimbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.isimbtn.ForeColor = System.Drawing.Color.Black;
-            this.isimbtn.Location = new System.Drawing.Point(0, 0);
-            this.isimbtn.Name = "isimbtn";
-            this.isimbtn.Size = new System.Drawing.Size(200, 40);
-            this.isimbtn.TabIndex = 107;
-            this.isimbtn.Text = "İsim";
-            this.isimbtn.UseVisualStyleBackColor = true;
-            // 
-            // yetkibtn
-            // 
-            this.yetkibtn.Enabled = false;
-            this.yetkibtn.FlatAppearance.BorderSize = 0;
-            this.yetkibtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.yetkibtn.ForeColor = System.Drawing.Color.Black;
-            this.yetkibtn.Location = new System.Drawing.Point(0, 40);
-            this.yetkibtn.Name = "yetkibtn";
-            this.yetkibtn.Size = new System.Drawing.Size(200, 40);
-            this.yetkibtn.TabIndex = 108;
-            this.yetkibtn.Text = "Yetki";
-            this.yetkibtn.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Gray;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 2);
-            this.panel4.TabIndex = 105;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Gray;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 2);
-            this.panel3.TabIndex = 104;
-            // 
-            // panelDesktop
-            // 
-            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.panelDesktop.Controls.Add(this.label2);
-            this.panelDesktop.Controls.Add(this.label1);
-            this.panelDesktop.Controls.Add(this.pictureBox1);
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(200, 30);
-            this.panelDesktop.Margin = new System.Windows.Forms.Padding(0);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(920, 600);
-            this.panelDesktop.TabIndex = 104;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Open Sans ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.label2.Location = new System.Drawing.Point(253, 386);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(415, 105);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Depo Kontrol ve Takip Sistemine\r\n\r\nHoş Geldiniz!\r\n";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.label1.Location = new System.Drawing.Point(375, 302);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 69);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "SASKİ";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::depo_proje.Properties.Resources.Artboard_1_copy;
-            this.pictureBox1.Location = new System.Drawing.Point(385, 109);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 180);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // onayBtn
             // 
@@ -313,74 +279,108 @@
             this.depobtn.UseVisualStyleBackColor = true;
             this.depobtn.Click += new System.EventHandler(this.depobtn_Click);
             // 
-            // minimaze
+            // panel5
             // 
-            this.minimaze.Dock = System.Windows.Forms.DockStyle.Right;
-            this.minimaze.FlatAppearance.BorderSize = 0;
-            this.minimaze.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.minimaze.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.minimaze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimaze.Font = new System.Drawing.Font("Open Sans Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.minimaze.ForeColor = System.Drawing.Color.Gray;
-            this.minimaze.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.minimaze.IconColor = System.Drawing.Color.Gray;
-            this.minimaze.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.minimaze.IconSize = 18;
-            this.minimaze.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.minimaze.Location = new System.Drawing.Point(970, 0);
-            this.minimaze.Name = "minimaze";
-            this.minimaze.Size = new System.Drawing.Size(50, 30);
-            this.minimaze.TabIndex = 107;
-            this.minimaze.UseVisualStyleBackColor = true;
-            this.minimaze.Click += new System.EventHandler(this.minimaze_Click_1);
-            this.minimaze.MouseEnter += new System.EventHandler(this.minimaze_MouseEnter);
-            this.minimaze.MouseLeave += new System.EventHandler(this.minimaze_MouseLeave);
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.panel5.Controls.Add(this.isimbtn);
+            this.panel5.Controls.Add(this.yetkibtn);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(200, 80);
+            this.panel5.TabIndex = 104;
             // 
-            // maximaze
+            // isimbtn
             // 
-            this.maximaze.Dock = System.Windows.Forms.DockStyle.Right;
-            this.maximaze.FlatAppearance.BorderSize = 0;
-            this.maximaze.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.maximaze.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.maximaze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maximaze.Font = new System.Drawing.Font("Open Sans Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.maximaze.ForeColor = System.Drawing.Color.Gray;
-            this.maximaze.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.maximaze.IconColor = System.Drawing.Color.Gray;
-            this.maximaze.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.maximaze.IconSize = 18;
-            this.maximaze.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.maximaze.Location = new System.Drawing.Point(1020, 0);
-            this.maximaze.Name = "maximaze";
-            this.maximaze.Size = new System.Drawing.Size(50, 30);
-            this.maximaze.TabIndex = 104;
-            this.maximaze.UseVisualStyleBackColor = true;
-            this.maximaze.Click += new System.EventHandler(this.maximaze_Click_1);
-            this.maximaze.MouseEnter += new System.EventHandler(this.maximaze_MouseEnter);
-            this.maximaze.MouseLeave += new System.EventHandler(this.maximaze_MouseLeave);
+            this.isimbtn.Enabled = false;
+            this.isimbtn.FlatAppearance.BorderSize = 0;
+            this.isimbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.isimbtn.ForeColor = System.Drawing.Color.Black;
+            this.isimbtn.Location = new System.Drawing.Point(0, 0);
+            this.isimbtn.Name = "isimbtn";
+            this.isimbtn.Size = new System.Drawing.Size(200, 40);
+            this.isimbtn.TabIndex = 107;
+            this.isimbtn.Text = "İsim";
+            this.isimbtn.UseVisualStyleBackColor = true;
             // 
-            // close
+            // yetkibtn
             // 
-            this.close.Dock = System.Windows.Forms.DockStyle.Right;
-            this.close.FlatAppearance.BorderSize = 0;
-            this.close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.close.Font = new System.Drawing.Font("Open Sans Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.close.ForeColor = System.Drawing.Color.Gray;
-            this.close.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.close.IconColor = System.Drawing.Color.Gray;
-            this.close.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.close.IconSize = 18;
-            this.close.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.close.Location = new System.Drawing.Point(1070, 0);
-            this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(50, 30);
-            this.close.TabIndex = 108;
-            this.close.UseVisualStyleBackColor = true;
-            this.close.Click += new System.EventHandler(this.close_Click);
-            this.close.MouseEnter += new System.EventHandler(this.close_MouseEnter);
-            this.close.MouseLeave += new System.EventHandler(this.close_MouseLeave);
+            this.yetkibtn.Enabled = false;
+            this.yetkibtn.FlatAppearance.BorderSize = 0;
+            this.yetkibtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.yetkibtn.ForeColor = System.Drawing.Color.Black;
+            this.yetkibtn.Location = new System.Drawing.Point(0, 40);
+            this.yetkibtn.Name = "yetkibtn";
+            this.yetkibtn.Size = new System.Drawing.Size(200, 40);
+            this.yetkibtn.TabIndex = 108;
+            this.yetkibtn.Text = "Yetki";
+            this.yetkibtn.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Gray;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 2);
+            this.panel4.TabIndex = 105;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Gray;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 2);
+            this.panel3.TabIndex = 104;
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.panelDesktop.Controls.Add(this.label2);
+            this.panelDesktop.Controls.Add(this.label1);
+            this.panelDesktop.Controls.Add(this.pictureBox1);
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(200, 30);
+            this.panelDesktop.Margin = new System.Windows.Forms.Padding(0);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(920, 600);
+            this.panelDesktop.TabIndex = 104;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Open Sans ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.label2.Location = new System.Drawing.Point(253, 386);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(415, 105);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Depo Kontrol ve Takip Sistemine\r\n\r\nHoş Geldiniz!\r\n";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Open Sans ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.label1.Location = new System.Drawing.Point(375, 302);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 69);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "SASKİ";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::depo_proje.Properties.Resources.Artboard_1_copy;
+            this.pictureBox1.Location = new System.Drawing.Point(385, 109);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 180);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // main_form
             // 
@@ -399,6 +399,7 @@
             this.Name = "main_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.main_form_Load);
+            this.SizeChanged += new System.EventHandler(this.main_form_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panel5.ResumeLayout(false);

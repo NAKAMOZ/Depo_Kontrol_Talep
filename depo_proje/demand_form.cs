@@ -81,7 +81,12 @@ namespace depo_proje
 
         private void editBtn_Click(object sender, EventArgs e)
         {
+            int rowIndex = dMalzemeler.CurrentCell.RowIndex;
             demandEdit dEdit = new demandEdit();
+            dEdit.urunId = dMalzemeler.Rows[rowIndex].Cells[0].Value.ToString();
+            dEdit.urunIsim = dMalzemeler.Rows[rowIndex].Cells[1].Value.ToString();
+            dEdit.urunMiktar = dMalzemeler.Rows[rowIndex].Cells[2].Value.ToString();
+            dEdit.urunBirim = dMalzemeler.Rows[rowIndex].Cells[3].Value.ToString();
             dEdit.Show();
         }
     }
